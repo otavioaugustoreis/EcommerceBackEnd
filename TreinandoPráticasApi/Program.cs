@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TreinandoPráticasApi.Context;
+using TreinandoPráticasApi.Repositories;
+using TreinandoPráticasApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IUsuario, UsuarioService>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 //Configurando conexão com banco de dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");

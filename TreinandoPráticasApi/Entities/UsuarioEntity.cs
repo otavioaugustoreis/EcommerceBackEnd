@@ -24,11 +24,12 @@ namespace TreinandoPráticasApi.Entities
         [Required]
         public string DsEmail { get; set; }
 
-        public UsuarioEntity(string dsNome, string dsCPF, string dsEmail, int id) : base(id, DateTime.Now)
+        public UsuarioEntity(string dsNome, string dsCPF, string dsEmail, int id, int nrIdade) : base(id, DateTime.Now)
         {
             DsNome = dsNome;
             DsCPF = dsCPF;
             DsEmail = dsEmail;
+            NrIdade = nrIdade;
         }
     }
 }

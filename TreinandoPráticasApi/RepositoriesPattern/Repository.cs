@@ -16,6 +16,7 @@ namespace TreinandoPráticasApi.Repositories
         public T Delete(T entidade)
         {
             _context.Set<T>().Remove(entidade);
+            _context.SaveChanges();
             return entidade;
         }
 
@@ -32,14 +33,14 @@ namespace TreinandoPráticasApi.Repositories
         public T Post(T entidade)
         {
             _context.Set<T>().Add(entidade);
-
+            _context.SaveChanges();
             return entidade;
         }
 
         public T Put(T entidade)
         {
             _context.Set<T>().Update(entidade);
-
+            _context.SaveChanges();
             return entidade;
         }
     }
