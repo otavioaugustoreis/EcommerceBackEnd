@@ -1,0 +1,6 @@
+@TreinandoPráticasApi_HostAddress = http://localhost:5051
+
+GET {{TreinandoPráticasApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
