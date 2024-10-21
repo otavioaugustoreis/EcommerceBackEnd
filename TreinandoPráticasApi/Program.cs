@@ -12,8 +12,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUsuario, UsuarioService>();
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 //Configurando conexão com banco de dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -21,6 +19,11 @@ string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConne
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(
         mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)
   ));
+
+
+//Vai criar um instancia unica por request
+builder.Services.AddScoped<IUsuario, UsuarioService>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 var app = builder.Build();
 

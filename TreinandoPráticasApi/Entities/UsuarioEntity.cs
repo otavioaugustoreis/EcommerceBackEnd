@@ -24,6 +24,10 @@ namespace TreinandoPráticasApi.Entities
         [Required]
         public string DsEmail { get; set; }
 
+        public UsuarioEntity()
+        {
+        }
+
         public UsuarioEntity(string dsNome, string dsCPF, string dsEmail, int id, int nrIdade) : base(id, DateTime.Now)
         {
             DsNome = dsNome;

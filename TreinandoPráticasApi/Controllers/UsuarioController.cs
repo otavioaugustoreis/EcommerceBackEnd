@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TreinandoPráticasApi.Context;
 using TreinandoPráticasApi.Entities;
+using TreinandoPráticasApi.Repositories;
 using TreinandoPráticasApi.RepositoriesPattern;
 using TreinandoPráticasApi.Services;
 
@@ -11,13 +12,11 @@ namespace TreinandoPráticasApi.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase, IControllerPattern<UsuarioEntity>
     {
-        public UsuarioService _UsuarioService { get; set; }
-        public AppDbContext _AppDbContext { get; set; }
+        private readonly IUsuario _UsuarioService;
 
-        public UsuarioController(UsuarioService usuarioService, AppDbContext appDbContext)
+        public UsuarioController(IUsuario usuarioService)
         {
             _UsuarioService = usuarioService;
-            _AppDbContext = appDbContext;
         }
 
         [HttpGet]
@@ -27,7 +26,7 @@ namespace TreinandoPráticasApi.Controllers
         }
 
 
-        [HttpGet("usuario/{id:int}")]
+        [HttpGet("{id:int}", Name = "GetUsuarioById")]
         public ActionResult<UsuarioEntity> GetId(int id)
         {
             UsuarioEntity u1 = _UsuarioService.GetId(g => g.Id == id);
@@ -44,7 +43,7 @@ namespace TreinandoPráticasApi.Controllers
             if (entidade is null) return BadRequest();
 
             _UsuarioService.Post(entidade);
-            return new CreatedAtRouteResult("UsuarioCriado", new { id = entidade.Id }, entidade);
+            return new CreatedAtRouteResult("GetUsuarioById", new { id = entidade.Id }, entidade);
         }
 
         [HttpPut("{id:int}")]
