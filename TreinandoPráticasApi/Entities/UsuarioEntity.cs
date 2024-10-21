@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 using System.Reflection;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 using TreinandoPráticasApi.Repositories;
 
 namespace TreinandoPráticasApi.Entities
@@ -27,13 +30,23 @@ namespace TreinandoPráticasApi.Entities
         public UsuarioEntity()
         {
         }
-
         public UsuarioEntity(string dsNome, string dsCPF, string dsEmail, int id, int nrIdade) : base(id, DateTime.Now)
         {
             DsNome = dsNome;
             DsCPF = dsCPF;
             DsEmail = dsEmail;
             NrIdade = nrIdade;
+            produtoEntity = new List<ProdutoEntity>();
         }
+
+        private void AdicionarProduto(ProdutoEntity produto) 
+        {
+            this.produtoEntity.Add(produto);
+        }
+
+
+        [JsonIgnore]
+        public ICollection<ProdutoEntity> produtoEntity { get; set; }
+
     }
 }

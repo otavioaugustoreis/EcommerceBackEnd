@@ -25,8 +25,7 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(_UsuarioService.Get());
         }
 
-
-        [HttpGet("{id:int}", Name = "GetUsuarioById")]
+        [HttpGet("{id:int:min(1)}", Name = "GetUsuarioById")]
         public ActionResult<UsuarioEntity> GetId(int id)
         {
             UsuarioEntity u1 = _UsuarioService.GetId(g => g.Id == id);
@@ -35,7 +34,6 @@ namespace TreinandoPráticasApi.Controllers
 
             return Ok(u1);  
         }
-
 
         [HttpPost]
         public ActionResult<UsuarioEntity> Post(UsuarioEntity entidade)
@@ -46,14 +44,14 @@ namespace TreinandoPráticasApi.Controllers
             return new CreatedAtRouteResult("GetUsuarioById", new { id = entidade.Id }, entidade);
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id:int:min(1)}")]
         public ActionResult<UsuarioEntity> Put(int id, UsuarioEntity t)
         {
             _UsuarioService.Put(t); 
             return Ok(t);
         }
 
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:int:min(1)}")]
         public ActionResult<UsuarioEntity> Delete(int id)
         {
             UsuarioEntity u1 = _UsuarioService.GetId(g => g.Id == id);
