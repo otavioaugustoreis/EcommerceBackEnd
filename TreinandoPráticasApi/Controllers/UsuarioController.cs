@@ -26,7 +26,7 @@ namespace TreinandoPráticasApi.Controllers
         }
 
         [HttpGet("{id:int:min(1)}", Name = "GetUsuarioById")]
-        public ActionResult<UsuarioEntity> GetId(int id)
+        public IActionResult GetId(int id)
         {
             UsuarioEntity u1 = _UsuarioService.GetId(g => g.Id == id);
 
