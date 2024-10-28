@@ -13,11 +13,11 @@ namespace TreinandoPráticasApi.Services
 
         public IEnumerable<ProdutoEntity> ProdutoPorCategoria(int id)
         {
-
-            return Get().Where(x => x.Id == id);
-            //    .FromSql($"SELECT * FROM TB_PRODUTOS WHERE pk_id = {id}")
-            //    .ToList();
+            //Lambda
+            return Get()
+                   .Where(x => x.Id == id);
             // Testar desse jeito
+            //Apenas para selects grandes você precisa executar uma select na mão
             //return _context._ProdutoEntity
             //    .FromSql($"SELECT * FROM TB_PRODUTOS WHERE pk_id = {id}")
             //    .ToList();
