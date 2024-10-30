@@ -15,12 +15,13 @@ namespace TreinandoPráticasApi.Services
         {
             //Lambda
             return Get()
-                   .Where(x => x.Id == id);
-            // Testar desse jeito
-            //Apenas para selects grandes você precisa executar uma select na mão
-            //return _context._ProdutoEntity
-            //    .FromSql($"SELECT * FROM TB_PRODUTOS WHERE pk_id = {id}")
-            //    .ToList();
+                   .Where(x => x.categoriaEntity.Id == id).OrderByDescending(x => x.Id);
         }
+
+        // Testar desse jeito
+        //Apenas para selects grandes você precisa executar uma select na mão
+        //return _context._ProdutoEntity
+        //    .FromSql($"SELECT * FROM TB_PRODUTOS WHERE pk_id = {id}")
+        //    .ToList();
     }
 }

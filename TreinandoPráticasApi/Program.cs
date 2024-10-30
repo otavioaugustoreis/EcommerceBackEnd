@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-//Ignorando referência ciclica com Json
+//Ignorando referência ciclica com JSON
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
@@ -30,6 +30,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(
 
 
 //Vai criar um instancia unica por request
+builder.Services.AddScoped<IProduto, ProdutoService>();
 builder.Services.AddScoped<IUsuario, UsuarioService>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
