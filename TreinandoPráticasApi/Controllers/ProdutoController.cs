@@ -20,6 +20,13 @@ namespace TreinandoPráticasApi.Controllers
             this.produto = produto;
         }
 
+        [HttpGet("produto/categoria/{id:int:min(1)}")]
+        public ActionResult<ProdutoEntity> GetProdutoPorCategoria(int id)
+        {
+            
+            return Ok();
+        }
+
         [HttpDelete("{id:int}")]
             public ActionResult<ProdutoEntity> Delete(int id)
         {

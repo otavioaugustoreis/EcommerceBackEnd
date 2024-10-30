@@ -6,7 +6,11 @@ namespace TreinandoPráticasApi.Context
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : 
+            base(options) 
+        { 
+        }
+        
         public DbSet<UsuarioEntity>   _UsuarioEntity     { get; set; }
         public DbSet<ProdutoEntity>   _ProdutoEntity     { get; set; }
         public DbSet<CategoriaEntity> _CategoriaEntity   { get; set; }
