@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.Xml;
 using TreinandoPráticasApi.Entities;
+using TreinandoPráticasApi.Filters;
 using TreinandoPráticasApi.Repositories;
 using TreinandoPráticasApi.RepositoriesPattern;
 
@@ -14,12 +15,32 @@ namespace TreinandoPráticasApi.Controllers
 
         private readonly ICategoria categoria;
 
-        public CategoriaController(ICategoria categoria)
+        private readonly IConfiguration configuration;
+
+        //Maneira mais padrão de inserir um loggin é pela interface ILogging
+        public readonly ILogger _logger;
+
+        public CategoriaController(ICategoria categoria, IConfiguration configuration, ILogger<CategoriaController> logger)
         {
             this.categoria = categoria;
+            this.configuration = configuration;
+            this. _logger = logger;
+        }
+
+
+        //Lendo arquivo de configuração
+        [HttpGet("Lendo arquivo de configuração")]
+        public string GetValores() 
+        {
+            var valor1 = configuration["chave1"];
+            var valor2 = configuration["secao1:chave1"];
+
+            return $"{valor1} e {valor2}";
         }
 
         [HttpGet]
+        //Filtro está relacionado com o Logging!!
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<CategoriaEntity>> Get()
         {
             return Ok(categoria.Get());
@@ -28,6 +49,8 @@ namespace TreinandoPráticasApi.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetId(int id)
         {
+
+            _logger.LogInformation("========== GET ID =========");
             CategoriaEntity c1 = categoria.GetId(x => x.Id == id);
             if (c1 is null)
                 return BadRequest("Categoria não encontrada");
