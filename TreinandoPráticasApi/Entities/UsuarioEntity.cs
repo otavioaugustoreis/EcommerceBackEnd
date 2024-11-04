@@ -30,23 +30,26 @@ namespace TreinandoPráticasApi.Entities
         public UsuarioEntity()
         {
         }
-        public UsuarioEntity(string dsNome, string dsCPF, string dsEmail, int id, int nrIdade) : base(id, DateTime.Now)
+        public UsuarioEntity(string dsNome, string dsCPF, string dsEmail, int id, int nrIdade)
+            : base(id)
         {
             DsNome = dsNome;
             DsCPF = dsCPF;
             DsEmail = dsEmail;
             NrIdade = nrIdade;
-            produtoEntity = new List<ProdutoEntity>();
+            pedidoEntities = new List<PedidoEntity>();
         }
 
-        private void AdicionarProduto(ProdutoEntity produto) 
+        private void AdicionarPedidos(PedidoEntity produto) 
         {
-            this.produtoEntity.Add(produto);
+            this.pedidoEntities.Add(produto);
         }
 
+        [Column("fk_pedido")]
+        public int PedidoId{ get; set; }
 
         [JsonIgnore]
-        public ICollection<ProdutoEntity> produtoEntity { get; set; }
+        public ICollection<PedidoEntity> pedidoEntities { get; set; }
 
     }
 }

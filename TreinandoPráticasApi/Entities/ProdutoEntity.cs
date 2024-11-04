@@ -10,7 +10,8 @@ namespace TreinandoPráticasApi.Entities
     {
         public ProdutoEntity() { }
 
-        public ProdutoEntity(string dsNome, int nrQuantidade)
+        public ProdutoEntity(int id, string dsNome, int nrQuantidade)
+            : base(id)
         {
             DsNome = dsNome;
             NrQuantidade = nrQuantidade;
@@ -28,9 +29,6 @@ namespace TreinandoPráticasApi.Entities
         public int Fkcategoria { get; set; }
         public CategoriaEntity categoriaEntity { get; set; }
 
-
-        [Column("fk_usuario")]
-        public int FkUsuario { get; set; }
-        public UsuarioEntity usuarioEntity { get; set; }
+        public ICollection<PedidoItemEntity> pedidoItens { get; set; }        
     }
 }

@@ -11,17 +11,28 @@ namespace TreinandoPráticasApi.Context
         { 
         }
         
-        public DbSet<UsuarioEntity>   _UsuarioEntity     { get; set; }
-        public DbSet<ProdutoEntity>   _ProdutoEntity     { get; set; }
-        public DbSet<CategoriaEntity> _CategoriaEntity   { get; set; }
-
+        public DbSet<UsuarioEntity>    _UsuarioEntity       { get; set; }
+        public DbSet<ProdutoEntity>    _ProdutoEntity       { get; set; }
+        public DbSet<CategoriaEntity>  _CategoriaEntity     { get; set; }
+        public DbSet<PedidoEntity>     _PedidoEntity        { get; set; }
+        public DbSet<PedidoItemEntity> _PedidoItemEntities  { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UsuarioEntity>()
-                .HasMany(p => p.produtoEntity)
+                .HasMany(p => p.pedidoEntities)
                 .WithOne(u => u.usuarioEntity)
-                .HasForeignKey(u => u.FkUsuario);
+                .HasForeignKey(u => u.UsuarioId);
+
+            modelBuilder.Entity<ProdutoEntity>()
+                .HasMany(p => p.pedidoItens)
+                .WithOne(p => p.produtoEntity)
+                .HasForeignKey(p => p.ProdutoId);
+
+            modelBuilder.Entity<PedidoEntity>()
+                .HasMany(p => p.pedidoItems)
+                .WithOne(p => p.PedidoEntity)
+                .HasForeignKey(p => p.pedidoId);
 
             modelBuilder.Entity<CategoriaEntity>()
                 .HasMany(p => p.produtoEntity)

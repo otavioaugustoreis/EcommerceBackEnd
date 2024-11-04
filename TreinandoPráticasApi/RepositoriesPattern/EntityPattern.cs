@@ -11,14 +11,16 @@ namespace TreinandoPráticasApi.Repositories
 
         [Required]
         [Column("dh_inclusao")]
-        public DateTime DateOfInclusion { get; set; } = DateTime.Now;
+        public DateTime DateOfInclusion { get; set; } 
 
-        public EntityPattern() { }
+        public EntityPattern() { 
 
-        protected EntityPattern(int id, DateTime dateOfInclusion)
+        }
+
+        protected EntityPattern(int id)
         {
             Id = id;
-            DateOfInclusion = dateOfInclusion;
+            DateOfInclusion = DateTime.Now;
         }
     }
 }

@@ -7,7 +7,8 @@ namespace TreinandoPráticasApi.Entities
     {
         public CategoriaEntity() { }
 
-        public CategoriaEntity(string dsNome, string dsImagem)
+        public CategoriaEntity(int id, string dsNome, string dsImagem)
+            : base(id)
         {
             DsNome = dsNome;
             DsImagem = dsImagem;
