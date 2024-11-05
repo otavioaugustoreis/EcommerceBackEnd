@@ -49,7 +49,6 @@ namespace TreinandoPráticasApi.Controllers
         [HttpGet("{id:int}")]
         public IActionResult GetId(int id)
         {
-
             _logger.LogInformation("========== GET ID =========");
             CategoriaEntity c1 = categoria.GetId(x => x.Id == id);
             if (c1 is null)

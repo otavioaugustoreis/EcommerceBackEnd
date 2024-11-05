@@ -5,7 +5,7 @@ namespace TreinandoPráticasApi.Repositories
 {
     public interface IPedido : IRepository<PedidoEntity>
     {
-        void AdicionarProduto();
-        void ConsultarProdutos();
+        void AdicionarPedido(int idPedido, int ProdutoId, int quantidade, int doubleValor);
+        List<ProdutoEntity> ConsultarProdutos(int idPedido);
     }
 }

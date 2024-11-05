@@ -10,15 +10,24 @@ namespace TreinandoPráticasApi.Services
         protected PedidoItemEntity pedidoItemEntity;
         protected readonly AppDbContext _context;
 
-        public  PedidoItemService(PedidoItemEntity pedidoItemEntity)
+        public  PedidoItemService( AppDbContext _context)
         {
-            this.pedidoItemEntity = pedidoItemEntity;
+            this._context = _context;
         }
 
-        public void AdicionarProduto(ProdutoEntity produtoEntity)
-        { 
-          pedidoItemEntity.produtoEntity = produtoEntity;
+        public PedidoItemEntity AdicionarPedidoItem(ProdutoEntity produtoEntity, PedidoEntity pedidoEntity, int quantidade)
+        {
+            pedidoItemEntity = new PedidoItemEntity
+            {
+                produtoEntity = produtoEntity,  
+                PedidoEntity = pedidoEntity,    
+                Quantidade = quantidade        
+            };
+
+            _context._PedidoItemEntities.Add(pedidoItemEntity);
+            _context.SaveChanges();
+
+            return pedidoItemEntity;
         }
-         
     }
 }

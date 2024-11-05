@@ -57,7 +57,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-//Defino os middlewares para direcionar a aaplicação de http para https
+//Defino os middlewares para direcionar a aplicação de http para https
 app.UseHttpsRedirection();
 //app.Use(async (context, next) =>
 //        {
