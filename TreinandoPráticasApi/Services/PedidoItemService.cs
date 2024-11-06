@@ -15,6 +15,10 @@ namespace TreinandoPráticasApi.Services
             this._context = _context;
         }
 
+        public PedidoItemService()
+        {
+        }
+
         public PedidoItemEntity AdicionarPedidoItem(ProdutoEntity produtoEntity, PedidoEntity pedidoEntity, int quantidade)
         {
             pedidoItemEntity = new PedidoItemEntity

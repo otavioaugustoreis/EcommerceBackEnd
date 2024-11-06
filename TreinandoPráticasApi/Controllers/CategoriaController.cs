@@ -4,6 +4,7 @@ using System.Security.Cryptography.Xml;
 using TreinandoPráticasApi.Entities;
 using TreinandoPráticasApi.Filters;
 using TreinandoPráticasApi.Repositories;
+using TreinandoPráticasApi.Repositories.UnitOfWork;
 using TreinandoPráticasApi.RepositoriesPattern;
 
 namespace TreinandoPráticasApi.Controllers
@@ -13,18 +14,18 @@ namespace TreinandoPráticasApi.Controllers
     public class CategoriaController : ControllerBase, IControllerPattern<CategoriaEntity>
     {
 
-        private readonly ICategoria categoria;
-
+        // private readonly ICategoria categoria;
+        public readonly IUnitOfWork _context;
         private readonly IConfiguration configuration;
 
         //Maneira mais padrão de inserir um loggin é pela interface ILogging
-        public readonly ILogger _logger;
+        //public readonly ILogger _logger;
 
-        public CategoriaController(ICategoria categoria, IConfiguration configuration, ILogger<CategoriaController> logger)
+        public CategoriaController(ICategoria categoria, IConfiguration configuration, UnitOfWork _context)
         {
-            this.categoria = categoria;
+            //this.categoria = categoria;
             this.configuration = configuration;
-            this. _logger = logger;
+            this._context = _context;
         }
 
 
@@ -43,14 +44,16 @@ namespace TreinandoPráticasApi.Controllers
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<CategoriaEntity>> Get()
         {
-            return Ok(categoria.Get());
+            return Ok(_context.CategoriaRepository.Get());
         }
 
         [HttpGet("{id:int}")]
         public IActionResult GetId(int id)
         {
-            _logger.LogInformation("========== GET ID =========");
-            CategoriaEntity c1 = categoria.GetId(x => x.Id == id);
+
+            //Adiconando Log forma convencional, da para usar para debugar tambem  
+            //_logger.LogInformation("========== GET ID =========");
+            CategoriaEntity c1 = _context.CategoriaRepository.GetId(x => x.Id == id);
             if (c1 is null)
                 return BadRequest("Categoria não encontrada");
             
@@ -62,7 +65,7 @@ namespace TreinandoPráticasApi.Controllers
         {
             if (entidade is null) return BadRequest();
 
-            categoria.Post(entidade);
+            _context.CategoriaRepository.Post(entidade);
             return new CreatedAtRouteResult("GetCategoriaById", new { id = entidade.Id }, entidade);
         }
 
@@ -70,21 +73,21 @@ namespace TreinandoPráticasApi.Controllers
         [HttpPut("{id:int:min(1)}")]
         public ActionResult<CategoriaEntity> Put(int id, CategoriaEntity t)
         {
-            CategoriaEntity c1 = categoria.GetId(c => c.Id == id);
+            CategoriaEntity c1 = _context.CategoriaRepository.GetId(c => c.Id == id);
             if (c1 is null || t is null)
                 return BadRequest("Categoria não encontrada");
 
-            return Ok(categoria.Put(t));
+            return Ok(_context.CategoriaRepository.Put(t));
         }
 
         [HttpPut("{id:int:min(1)}")]
         public ActionResult<CategoriaEntity> Delete(int id)
         {
-            CategoriaEntity c1 = categoria.GetId(c => c.Id == id);
+            CategoriaEntity c1 = _context.CategoriaRepository.GetId(c => c.Id == id);
             if (c1 is null)
                 return BadRequest("Categoria não encontrada");
 
-            return Ok(categoria.Delete(c1));
+            return Ok(_context.CategoriaRepository.Delete(c1));
 
         }
     }
