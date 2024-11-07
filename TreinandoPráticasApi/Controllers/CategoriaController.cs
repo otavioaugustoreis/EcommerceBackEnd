@@ -16,6 +16,7 @@ namespace TreinandoPráticasApi.Controllers
 
         // private readonly ICategoria categoria;
         public readonly IUnitOfWork _context;
+        //Interface responsável pela leitura do appsettingsJson
         private readonly IConfiguration configuration;
 
         //Maneira mais padrão de inserir um loggin é pela interface ILogging
