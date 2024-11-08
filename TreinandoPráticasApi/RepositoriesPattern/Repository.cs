@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using TreinandoPráticasApi.Context;
+using TreinandoPráticasApi.Data.Context;
 
 namespace TreinandoPráticasApi.Repositories
 {

@@ -1,4 +1,4 @@
-﻿using TreinandoPráticasApi.Context;
+﻿using TreinandoPráticasApi.Data.Context;
 using TreinandoPráticasApi.Entities;
 using TreinandoPráticasApi.Repositories;
 
@@ -13,10 +13,6 @@ namespace TreinandoPráticasApi.Services
         public  PedidoItemService( AppDbContext _context)
         {
             this._context = _context;
-        }
-
-        public PedidoItemService()
-        {
         }
 
         public PedidoItemEntity AdicionarPedidoItem(ProdutoEntity produtoEntity, PedidoEntity pedidoEntity, int quantidade)

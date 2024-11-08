@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 
-namespace TreinandoPráticasApi.Logging
+namespace TreinandoPráticasApi.Configs.Logging
 {
     public class CustomLoggerProvider : ILoggerProvider
     {
@@ -8,7 +8,7 @@ namespace TreinandoPráticasApi.Logging
         private readonly CustomLoggerProviderConfiguration loggerConfig;
 
         //Dicionário de loggers
-        private readonly ConcurrentDictionary<string, CustomLogger> loggers = 
+        private readonly ConcurrentDictionary<string, CustomLogger> loggers =
                                               new ConcurrentDictionary<string, CustomLogger>();
         public CustomLoggerProvider(CustomLoggerProviderConfiguration loggerConfig)
         {
@@ -24,7 +24,7 @@ namespace TreinandoPráticasApi.Logging
         //Liberando recursos após a aplicação fechar
         public void Dispose()
         {
-            loggers.Clear() ;
+            loggers.Clear();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using TreinandoPráticasApi.Context;
+﻿using TreinandoPráticasApi.Data.Context;
 using TreinandoPráticasApi.Entities;
 using TreinandoPráticasApi.Repositories;
 

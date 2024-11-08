@@ -1,6 +1,6 @@
 ﻿using TreinandoPráticasApi.Logging;
 
-namespace TreinandoPráticasApi.Providers
+namespace TreinandoPráticasApi.Configs.Providers
 {
     public static class LoggerStartup
     {

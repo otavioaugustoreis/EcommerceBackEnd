@@ -15,7 +15,7 @@ namespace TreinandoPráticasApi.Entities
         public int UsuarioId { get; set; }
         public UsuarioEntity usuarioEntity { get; set; }
 
-        public ICollection<PedidoItemEntity> pedidoItems { get; set; }
+        public List<PedidoItemEntity> pedidoItems { get; set; }
 
         public PedidoEntity() 
         { 

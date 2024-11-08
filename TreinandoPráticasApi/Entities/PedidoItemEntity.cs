@@ -4,6 +4,7 @@ using TreinandoPráticasApi.Repositories;
 
 namespace TreinandoPráticasApi.Entities
 {
+    [Table("TB_PEDIDOITEM")]
     public class PedidoItemEntity : EntityPattern
     {
         [Column("nr_valor")]

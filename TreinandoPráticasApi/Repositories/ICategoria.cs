@@ -2,7 +2,7 @@
 
 namespace TreinandoPráticasApi.Repositories
 {
-    public interface ICategoria : IRepository<CategoriaEntity>
+    public interface ICategoria : IRepository<CategoriaDTO>
     {
     }
 }

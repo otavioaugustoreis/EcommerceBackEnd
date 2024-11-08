@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace TreinandoPráticasApi.Providers
+namespace TreinandoPráticasApi.Configs.Providers
 {
     public static class JsonStartup
     {

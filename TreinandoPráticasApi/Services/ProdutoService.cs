@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TreinandoPráticasApi.Context;
+using TreinandoPráticasApi.Data.Context;
 using TreinandoPráticasApi.Entities;
 using TreinandoPráticasApi.Repositories;
 
@@ -15,7 +15,7 @@ namespace TreinandoPráticasApi.Services
         {
             //Lambda
             return Get()
-                   .Where(x => x.categoriaEntity.Id == id).OrderByDescending(x => x.Id);
+                   .Where(x => x.CategoriaDTO.Id == id).OrderByDescending(x => x.Id);
         }
 
         // Testar desse jeito

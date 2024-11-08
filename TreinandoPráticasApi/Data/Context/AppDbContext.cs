@@ -2,20 +2,20 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using TreinandoPráticasApi.Entities;
 
-namespace TreinandoPráticasApi.Context
+namespace TreinandoPráticasApi.Data.Context
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : 
-            base(options) 
-        { 
+        public AppDbContext(DbContextOptions<AppDbContext> options) :
+            base(options)
+        {
         }
-        
-        public DbSet<UsuarioEntity>    _UsuarioEntity       { get; set; }
-        public DbSet<ProdutoEntity>    _ProdutoEntity       { get; set; }
-        public DbSet<CategoriaEntity>  _CategoriaEntity     { get; set; }
-        public DbSet<PedidoEntity>     _PedidoEntity        { get; set; }
-        public DbSet<PedidoItemEntity> _PedidoItemEntities  { get; set; }
+
+        public DbSet<UsuarioEntity> _UsuarioEntity { get; set; }
+        public DbSet<ProdutoEntity> _ProdutoEntity { get; set; }
+        public DbSet<CategoriaEntity> _CategoriaEntity { get; set; }
+        public DbSet<PedidoEntity> _PedidoEntity { get; set; }
+        public DbSet<PedidoItemEntity> _PedidoItemEntities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

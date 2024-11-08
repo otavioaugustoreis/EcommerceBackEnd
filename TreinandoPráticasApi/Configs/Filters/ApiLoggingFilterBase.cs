@@ -1,4 +1,4 @@
-﻿namespace TreinandoPráticasApi.Filters
+﻿namespace TreinandoPráticasApi.Configs.Filters
 {
     public class ApiLoggingFilterBase
     {

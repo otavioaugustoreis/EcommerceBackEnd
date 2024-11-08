@@ -1,5 +1,5 @@
 ﻿using Microsoft.CodeAnalysis.Operations;
-using TreinandoPráticasApi.Context;
+using TreinandoPráticasApi.Data.Context;
 using TreinandoPráticasApi.Services;
 
 namespace TreinandoPráticasApi.Repositories.UnitOfWork

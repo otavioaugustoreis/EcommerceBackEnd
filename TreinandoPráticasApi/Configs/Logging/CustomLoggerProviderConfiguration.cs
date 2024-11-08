@@ -1,5 +1,4 @@
-﻿
-namespace TreinandoPráticasApi.Logging
+﻿namespace TreinandoPráticasApi.Configs.Logging
 {
     public class CustomLoggerProviderConfiguration
     {

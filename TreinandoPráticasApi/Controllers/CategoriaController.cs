@@ -1,32 +1,35 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.Xml;
+using TreinandoPráticasApi.Configs.Filters;
+using TreinandoPráticasApi.DTO;
 using TreinandoPráticasApi.Entities;
-using TreinandoPráticasApi.Filters;
 using TreinandoPráticasApi.Repositories;
-using TreinandoPráticasApi.Repositories.UnitOfWork;
 using TreinandoPráticasApi.RepositoriesPattern;
 
 namespace TreinandoPráticasApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriaController : ControllerBase, IControllerPattern<CategoriaEntity>
+    public class CategoriaController : ControllerBase, IControllerPattern<CategoriaDTO>
     {
 
-        // private readonly ICategoria categoria;
-        public readonly IUnitOfWork _context;
-        //Interface responsável pela leitura do appsettingsJson
+        private readonly ICategoria categoria;
+
+        //Classe para acessar os arquivos JSON
         private readonly IConfiguration configuration;
 
-        //Maneira mais padrão de inserir um loggin é pela interface ILogging
-        //public readonly ILogger _logger;
+        private readonly IMapper mapper;
 
-        public CategoriaController(ICategoria categoria, IConfiguration configuration, UnitOfWork _context)
+        //Maneira mais padrão de inserir um loggin é pela interface ILogging
+       // public readonly ILogger _logger;
+
+        public CategoriaController(ICategoria categoria, IConfiguration configuration, IMapper mapper)
         {
-            //this.categoria = categoria;
+            this.categoria = categoria;
             this.configuration = configuration;
-            this._context = _context;
+            this.mapper = mapper;
         }
 
 
@@ -43,18 +46,16 @@ namespace TreinandoPráticasApi.Controllers
         [HttpGet]
         //Filtro está relacionado com o Logging!!
         [ServiceFilter(typeof(ApiLoggingFilter))]
-        public ActionResult<IEnumerable<CategoriaEntity>> Get()
+        public ActionResult<IEnumerable<CategoriaDTO>> Get()
         {
-            return Ok(_context.CategoriaRepository.Get());
+            return Ok(categoria.Get());
         }
 
         [HttpGet("{id:int}")]
         public IActionResult GetId(int id)
         {
-
-            //Adiconando Log forma convencional, da para usar para debugar tambem  
             //_logger.LogInformation("========== GET ID =========");
-            CategoriaEntity c1 = _context.CategoriaRepository.GetId(x => x.Id == id);
+            CategoriaDTO c1 = categoria.GetId(x => x.Id == id);
             if (c1 is null)
                 return BadRequest("Categoria não encontrada");
             
@@ -62,33 +63,33 @@ namespace TreinandoPráticasApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<CategoriaEntity> Post(CategoriaEntity entidade)
+        public ActionResult<CategoriaDTO> Post(CategoriaDTO entidade)
         {
             if (entidade is null) return BadRequest();
 
-            _context.CategoriaRepository.Post(entidade);
+            categoria.Post(entidade);
             return new CreatedAtRouteResult("GetCategoriaById", new { id = entidade.Id }, entidade);
         }
 
 
         [HttpPut("{id:int:min(1)}")]
-        public ActionResult<CategoriaEntity> Put(int id, CategoriaEntity t)
+        public ActionResult<CategoriaDTO> Put(int id, CategoriaDTO t)
         {
-            CategoriaEntity c1 = _context.CategoriaRepository.GetId(c => c.Id == id);
+            CategoriaDTO c1 = categoria.GetId(c => c.Id == id);
             if (c1 is null || t is null)
                 return BadRequest("Categoria não encontrada");
 
-            return Ok(_context.CategoriaRepository.Put(t));
+            return Ok(categoria.Put(t));
         }
 
         [HttpPut("{id:int:min(1)}")]
-        public ActionResult<CategoriaEntity> Delete(int id)
+        public ActionResult<CategoriaDTO> Delete(int id)
         {
-            CategoriaEntity c1 = _context.CategoriaRepository.GetId(c => c.Id == id);
+            CategoriaDTO c1 = categoria.GetId(c => c.Id == id);
             if (c1 is null)
                 return BadRequest("Categoria não encontrada");
 
-            return Ok(_context.CategoriaRepository.Delete(c1));
+            return Ok(categoria.Delete(c1));
 
         }
     }

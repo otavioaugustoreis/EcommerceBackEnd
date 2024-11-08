@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using TreinandoPráticasApi.Repositories;
 
 namespace TreinandoPráticasApi.Entities
 {
+    [Table("TB_CATEGORIA")]
     public class CategoriaEntity : EntityPattern
     {
         public CategoriaEntity() { }
@@ -12,7 +14,6 @@ namespace TreinandoPráticasApi.Entities
         {
             DsNome = dsNome;
             DsImagem = dsImagem;
-            produtoEntity = new List<ProdutoEntity>();
         }
 
         public void AdicionarProduto(ProdutoEntity produto)
@@ -20,11 +21,14 @@ namespace TreinandoPráticasApi.Entities
             this.produtoEntity.Add(produto);
         }
 
+        [Column("ds_nome")]
+        [Required]
+        [StringLength(80)]
         public string  DsNome { get; set; }
 
         [Column("ds_imagem")]
         public string  DsImagem { get; set; }
 
-        public  ICollection<ProdutoEntity> produtoEntity { get; set; }
+        public  ICollection<ProdutoEntity> produtoEntity { get; set; }  = new List<ProdutoEntity>();
     }
 }
