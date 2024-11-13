@@ -7,7 +7,6 @@ using TreinandoPráticasApi.Entities;
 namespace TreinandoPráticasApi.DTO
 {
     public class ProdutoDTO 
-
     {
         public int Id { get; set; }
 
