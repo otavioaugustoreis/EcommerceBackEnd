@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TreinandoPráticasApi.Context;
+using TreinandoPráticasApi.Data.Context;
 
 namespace TreinandoPráticasApi.Providers
 {

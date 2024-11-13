@@ -1,12 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 using TreinandoPráticasApi.Configs.DTO;
-using TreinandoPráticasApi.Configs.Exceptions;
 using TreinandoPráticasApi.Configs.Filters;
 using TreinandoPráticasApi.Configs.Logging;
+using TreinandoPráticasApi.Configs.Providers;
 using TreinandoPráticasApi.Data.Context;
 using TreinandoPráticasApi.DTO;
+using TreinandoPráticasApi.Exceptions;
 using TreinandoPráticasApi.Logging;
+using TreinandoPráticasApi.Providers;
 using TreinandoPráticasApi.Repositories;
 using TreinandoPráticasApi.Services;
 
@@ -20,35 +22,21 @@ builder.Services.AddSwaggerGen();
 
 //Adiciona o provedor de log personalizado(CustomLoggerProvider) ao sistema de log do ASP.NET Core, 
 //definindo o nível mínimo de log como o logLevel.Information
-builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
-{
-    LogLevel = LogLevel.Information
-}));
-
+builder.Logging.AddConfigurationsLogger();
 
 //Ignorando referência ciclica com JSON
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-});
+builder.Services.AddCofigurationJson();
 
 //Configurando conexão com banco de dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
-
-//Conexão com o banco
-builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(
-        mySqlConnection, ServerVersion.AutoDetect(mySqlConnection)
-  ));
+builder.Services.AddConectionBD(mySqlConnection);
 
 var valor1 = builder.Configuration["chave1"];
 
 //Vai criar uma instancia unica por request
-builder.Services.AddScoped<IProduto, ProdutoService>();
-builder.Services.AddScoped<IUsuario, UsuarioService>();
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped<ApiLoggingFilter>();
+builder.Services.AddDIPScoppedClasse();
 
-
+//Mapper DTO
 builder.Services.AddMapperStartup();
 
 var app = builder.Build();
@@ -61,7 +49,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.ConfigureExceptionHandler();
 }
-
 
 //Defino os middlewares para direcionar a aplicação de http para https
 app.UseHttpsRedirection();

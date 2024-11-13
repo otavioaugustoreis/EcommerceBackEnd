@@ -1,5 +1,5 @@
 ﻿using Microsoft.CodeAnalysis.Elfie.Diagnostics;
-using TreinandoPráticasApi.Filters;
+using TreinandoPráticasApi.Configs.Filters;
 using TreinandoPráticasApi.Repositories;
 using TreinandoPráticasApi.Services;
 
