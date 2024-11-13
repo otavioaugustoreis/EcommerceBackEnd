@@ -7,11 +7,12 @@ namespace TreinandoPráticasApi.DTO
     //Aprendendo a usar o usuário DTO com record e struct
     //obs: No obsidian tem a explicação de cada 
     public readonly record struct UsuarioDTO(int Id
+                                            , string DsNome
                                             , string DsCPF
                                             , int NrIdade
                                             , string DsEmail
                                             , int PedidoId)
-    { 
+    { }
 
 
     //Jeito padrão de DTO
