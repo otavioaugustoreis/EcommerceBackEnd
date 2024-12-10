@@ -5,7 +5,6 @@ using TreinandoPráticasApi.Configs.Filters;
 using TreinandoPráticasApi.Configs.Logging;
 using TreinandoPráticasApi.Configs.Providers;
 using TreinandoPráticasApi.Data.Context;
-using TreinandoPráticasApi.DTO;
 using TreinandoPráticasApi.Exceptions;
 using TreinandoPráticasApi.Logging;
 using TreinandoPráticasApi.Providers;
