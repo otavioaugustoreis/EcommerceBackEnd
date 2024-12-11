@@ -26,7 +26,7 @@ namespace TreinandoPráticasApi.Entities
         public int NrQuantidade { get; set; }
 
         [Column("fk_categoria")] 
-        public int Fkcategoria { get; set; }
+        public int? Fkcategoria { get; set; }
         public CategoriaEntity categoriaEntity { get; set; }
 
         public ICollection<PedidoItemEntity> pedidoItens { get; set; }        

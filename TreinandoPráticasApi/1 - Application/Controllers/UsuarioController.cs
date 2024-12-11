@@ -9,7 +9,7 @@ namespace TreinandoPráticasApi.Controllers
 
     [Route("[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase, IControllerPattern<UsuarioEntity>
+    public class UsuarioController : ControllerBase //, IControllerPattern<UsuarioEntity>
     {
         private readonly IUsuario _UsuarioService;
 

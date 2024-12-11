@@ -2,12 +2,9 @@
 
 namespace TreinandoPráticasApi._1___Application.Models
 {
-    public class CategoriaModel
+    public  record  CategoriaModel(int Id, 
+                                   string DsNome,
+                                   string DsImagem)
     {
-        public int Id { get; set; }
-        public string DsNome { get; set; }
-
-        [Column("ds_imagem")]
-        public string DsImagem { get; set; }
     }
 }

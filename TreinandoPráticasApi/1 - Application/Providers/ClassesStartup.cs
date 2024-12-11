@@ -1,4 +1,6 @@
-﻿using Microsoft.CodeAnalysis.Elfie.Diagnostics;
+﻿using Microsoft.AspNetCore.WebSockets;
+using Microsoft.CodeAnalysis.Elfie.Diagnostics;
+using TreinandoPráticasApi._4__Data;
 using TreinandoPráticasApi.Configs.Filters;
 using TreinandoPráticasApi.Repositories;
 using TreinandoPráticasApi.Services;
@@ -9,6 +11,7 @@ namespace TreinandoPráticasApi.Providers
     {
         public static IServiceCollection AddDIPScoppedClasse(this IServiceCollection services)
         {
+            services.AddScoped<SeedingServiceData>();
             services.AddScoped<IProduto, ProdutoService>();
             services.AddScoped<IUsuario, UsuarioService>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

@@ -37,7 +37,7 @@ namespace TreinandoPráticasApi.Logging
         private void EscreverTextoNoArquivo(string mensgem)
         {
             //escrevendo o log a onde eu pedi no arquivo
-            string caminhoArquivoLog = @"C:\Users\oaugu\source\repos\otavioaugustoreis\ApiDeProdutos\logs\log.txt";
+            string caminhoArquivoLog = @"C:\Project_ASPNET\EcommerceBackEnd\log.txt";
 
             using (StreamWriter streamWriter =  new StreamWriter(caminhoArquivoLog, true))
             {

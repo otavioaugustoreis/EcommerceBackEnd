@@ -9,7 +9,7 @@ namespace TreinandoPráticasApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProdutoController : ControllerBase, IControllerPattern<ProdutoEntity>
+    public class ProdutoController : ControllerBase //IControllerPattern<ProdutoEntity>
     {
 
         private readonly IProduto produto;

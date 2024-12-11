@@ -1,0 +1,112 @@
+Information: 14 - Now listening on: http://localhost:5051
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE DATABASE `treinandoAPI`;
+Information: 20101 - Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+Information: 20101 - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='treinandoAPI' AND TABLE_NAME='__EFMigrationsHistory';
+Information: 20101 - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+Information: 20402 - Applying migration '20241020044123_InitialMigrations'.
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+Information: 20101 - Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_USUARIO` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `ds_nome` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ds_cpf` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `nr_idade` int NOT NULL,
+    `ds_email` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_USUARIO` PRIMARY KEY (`pk_id`)
+) CHARACTER SET=utf8mb4;
+Information: 20101 - Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20241020044123_InitialMigrations', '8.0.10');
+Information: 20402 - Applying migration '20241211004114_MigracaoCerta'.
+Information: 20101 - Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_USUARIO` ADD `fk_pedido` int NOT NULL DEFAULT 0;
+Information: 20101 - Executed DbCommand (36ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_CATEGORIA` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `ds_nome` varchar(80) CHARACTER SET utf8mb4 NOT NULL,
+    `ds_imagem` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_CATEGORIA` PRIMARY KEY (`pk_id`)
+) CHARACTER SET=utf8mb4;
+Information: 20101 - Executed DbCommand (54ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_PEDIDO` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `fk_usuario` int NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_PEDIDO` PRIMARY KEY (`pk_id`),
+    CONSTRAINT `FK_TB_PEDIDO_TB_USUARIO_fk_usuario` FOREIGN KEY (`fk_usuario`) REFERENCES `TB_USUARIO` (`pk_id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+Information: 20101 - Executed DbCommand (101ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_PRODUTO` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `ds_nome` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `nr_quantidade` int NOT NULL,
+    `fk_categoria` int NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_PRODUTO` PRIMARY KEY (`pk_id`),
+    CONSTRAINT `FK_TB_PRODUTO_TB_CATEGORIA_fk_categoria` FOREIGN KEY (`fk_categoria`) REFERENCES `TB_CATEGORIA` (`pk_id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+Information: 20101 - Executed DbCommand (62ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_PEDIDOITEM` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `nr_valor` double NOT NULL,
+    `nr_quantidade` int NOT NULL,
+    `fk_pedido` int NOT NULL,
+    `fk_produto` int NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_PEDIDOITEM` PRIMARY KEY (`pk_id`),
+    CONSTRAINT `FK_TB_PEDIDOITEM_TB_PEDIDO_fk_pedido` FOREIGN KEY (`fk_pedido`) REFERENCES `TB_PEDIDO` (`pk_id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_TB_PEDIDOITEM_TB_PRODUTO_fk_produto` FOREIGN KEY (`fk_produto`) REFERENCES `TB_PRODUTO` (`pk_id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+Information: 20101 - Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PEDIDO_fk_usuario` ON `TB_PEDIDO` (`fk_usuario`);
+Information: 20101 - Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PEDIDOITEM_fk_pedido` ON `TB_PEDIDOITEM` (`fk_pedido`);
+Information: 20101 - Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PEDIDOITEM_fk_produto` ON `TB_PEDIDOITEM` (`fk_produto`);
+Information: 20101 - Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PRODUTO_fk_categoria` ON `TB_PRODUTO` (`fk_categoria`);
+Information: 20101 - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20241211004114_MigracaoCerta', '8.0.10');
+Information: 14 - Now listening on: http://localhost:5051
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+Warning: 3 - Failed to determine the https port for redirect.
+Information: 20101 - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_nome`, `t`.`fk_categoria`, `t`.`nr_quantidade`
+FROM `TB_PRODUTO` AS `t`
+Information: 14 - Now listening on: http://localhost:5051
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 14 - Now listening on: http://localhost:5051
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 14 - Now listening on: http://localhost:5051
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+Information: 14 - Now listening on: http://localhost:5051
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
