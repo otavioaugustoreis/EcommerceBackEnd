@@ -63,7 +63,7 @@ namespace TreinandoPráticasApi.Repositories.UnitOfWork
 
         public  void Commit()
         {
-            throw new NotImplementedException();
+            dbContext.SaveChanges();
         }
     }
 }

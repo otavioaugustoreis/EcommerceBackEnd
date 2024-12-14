@@ -22,9 +22,7 @@ namespace TreinandoPráticasApi.Controllers
         private readonly IConfiguration configuration;
         private readonly IMapper _mapper;
 
-        //Maneira mais padrão de inserir um loggin é pela interface ILogging
-        public readonly ILogger _logger;
-
+        
         public CategoriaController(IUnitOfWork _uof, IConfiguration configuration, IMapper mapper)
         {
             this._uof = _uof;
@@ -34,36 +32,38 @@ namespace TreinandoPráticasApi.Controllers
 
 
         //Lendo arquivo de configuração
-        [HttpGet("Lendo arquivo de configuração")]
-        public string GetValores()
-        {
-            var valor1 = configuration["chave1"];
-            var valor2 = configuration["secao1:chave1"];
+        //[HttpGet("Lendo arquivo de configuração")]
+        //public string GetValores()
+        //{
+        //    var valor1 = configuration["chave1"];
+        //    var valor2 = configuration["secao1:chave1"];
 
-            return $"{valor1} e {valor2}";
-        }
+        //    return $"{valor1} e {valor2}";
+        //}
 
-        [HttpGet]
+
+
         //Filtro está relacionado com o Logging!!
-        [ServiceFilter(typeof(ApiLoggingFilter))]
+        // [ServiceFilter(typeof(ApiLoggingFilter))]
+        [HttpGet]
         public ActionResult<IEnumerable<CategoriaModel>> Get()
         {
 
             var categorias = _uof.CategoriaRepository.Get();
 
-            if (!categorias.Any() || categorias is null) return BadRequest(categorias);
+            if (!categorias.Any() || categorias is null) return BadRequest("Não existe categoria");
 
             var categoriaDto = _mapper.Map<IEnumerable<CategoriaModel>>(categorias);
-
+           
             return Ok(categoriaDto);
         }
 
-
-        [HttpGet("{id:int}")]
-        public ActionResult<CategoriaModel> GetId(int id)
+        
+        //Esse GetId é FromQuery, ou seja, você escreve via URL e não no HTTP
+        //QueryString
+        [HttpGet("categoria/", Name = "GetCategoriaById")]
+        public ActionResult<CategoriaModel> GetId([FromQuery] int id)
         {
-            _logger.LogInformation("========== GET ID =========");
-            
             CategoriaEntity c1 =  _uof.CategoriaRepository.GetId(x => x.Id == id);
 
             if (c1 is null) return BadRequest("Categoria não encontrada");
@@ -73,40 +73,51 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaModel);
         }
 
-        [HttpPost]
+        [HttpPost()]
         public ActionResult<CategoriaModel> Post(CategoriaModel entidade)
         {
-            if (entidade is null) return BadRequest();
+            if (entidade is {  DsNome: null}) return BadRequest();
 
             var categoria = _mapper.Map<CategoriaEntity>(entidade);
 
             _uof.CategoriaRepository.Post(categoria);
+            _uof.Commit();
 
-            return new CreatedAtRouteResult("GetCategoriaById", new { id = entidade.Id }, entidade);
+            var novoProdutoDto = _mapper.Map<CategoriaModel>(categoria);
+            
+            return new CreatedAtRouteResult("GetCategoriaById", new { id = novoProdutoDto.Id }, novoProdutoDto);
         }
 
 
         [HttpPut("{id:int:min(1)}")]
         public ActionResult<CategoriaModel> Put(int id, CategoriaModel t)
         {
-            CategoriaEntity c1 = _uof.CategoriaRepository.GetId(c => c.Id == id);
+            if (id != t.Id) return BadRequest("Id diferente.");  
             
-            if (c1 is null || t is null) return BadRequest("Categoria não encontrada");
+            CategoriaEntity c1 = _uof.CategoriaRepository.GetId(c => c.Id == id);
 
+            if (c1.Id != t.Id || t is null ) return NotFound("Categoria não encontrada");
 
-            return Ok(_uof.CategoriaRepository.Put(c1));
+            var dto = _mapper.Map(t, c1);
+
+            _uof.CategoriaRepository.Put(dto);
+            _uof.Commit();
+
+            return Ok();
         }
 
         [HttpDelete("{id:int:min(1)}")]
         public ActionResult<CategoriaModel> Delete(int id)
         {
             CategoriaEntity c1 = _uof.CategoriaRepository.GetId(c => c.Id == id);
-            if (c1 is null)
-                return BadRequest("Categoria não encontrada");
-
             
-            return Ok(_uof.CategoriaRepository.Delete(c1));
+            if (c1 is null) return NotFound("Categoria não encontrada ");
 
+            _uof.CategoriaRepository.Delete(c1);
+            _uof.Commit();
+
+            return NoContent();
         }
+
     }
 }

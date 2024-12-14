@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using TreinandoPráticasApi._4__Data;
 using TreinandoPráticasApi.Configs.DTO;
 using TreinandoPráticasApi.Configs.Filters;
 using TreinandoPráticasApi.Configs.Logging;
@@ -39,6 +40,20 @@ builder.Services.AddDIPScoppedClasse();
 builder.Services.AddMapperStartup();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var seedingService = services.GetRequiredService<SeedingServiceData>();
+        seedingService.Seeding(); // Executa o método de seeding
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Erro ao executar o seeding: {ex.Message}");
+    }
+}
 
 //Aqui fazemos as configurações dos middlewares usando a variável app
 // Configure the HTTP request pipeline.
