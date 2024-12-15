@@ -5,7 +5,6 @@ namespace TreinandoPráticasApi.Validators
 {
     public class UsuarioUtil : AbstractValidator<UsuarioModel> 
     {
-        
         public UsuarioUtil() 
         {
             RuleFor(x => x.DsNome)

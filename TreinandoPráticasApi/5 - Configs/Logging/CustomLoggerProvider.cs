@@ -19,7 +19,7 @@ namespace TreinandoPráticasApi.Configs.Logging
         //Usado para criar o log para  uma categoria existente
         public ILogger CreateLogger(string categoryName)
         {
-            return loggers.GetOrAdd(categoryName, name => new CustomLogger(name, loggerConfig));
+            return loggers.GetOrAdd(categoryName, name => new CustomLogger(name, loggerConfig, loggerConfig.LogFile));
         }
 
         //Liberando recursos após a aplicação fechar

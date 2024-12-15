@@ -8,11 +8,12 @@ namespace TreinandoPráticasApi.Logging
         private readonly string loggerName;
 
         private readonly CustomLoggerProviderConfiguration loggerConfig;
-
-        public CustomLogger(string loggerName, CustomLoggerProviderConfiguration loggerConfig)
+        private readonly string caminhoArquivoLog;
+        public CustomLogger(string loggerName, CustomLoggerProviderConfiguration loggerConfig, string caminhoArquivo)
         {
             this.loggerName = loggerName;
             this.loggerConfig = loggerConfig;
+            this.caminhoArquivoLog = caminhoArquivo;
         }
 
         //Verifica se o nivel(Warning) de log desejado esta habilitado para a configuração
@@ -30,25 +31,29 @@ namespace TreinandoPráticasApi.Logging
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
         {
             //Formatando a mensagem
-            string mensagem = $"{logLevel.ToString()}: {eventId.Id} - {formatter(state, exception)}";
-            EscreverTextoNoArquivo(mensagem);
+            string mensagem = formatter(state, exception);
+
+            // Detalha o log se houver exceção
+            if (exception != null)
+            {
+                mensagem += $"\nExceção: {exception.Message}\n" +
+                            $"Rastreamento: {exception.StackTrace}";
+            }
+
+            EscreverTextoNoArquivo($"{logLevel}: {eventId.Id} - {mensagem}");
         }
 
-        private void EscreverTextoNoArquivo(string mensgem)
+        private void EscreverTextoNoArquivo(string mensagem)
         {
-            //escrevendo o log a onde eu pedi no arquivo
-            string caminhoArquivoLog = @"C:\Project_ASPNET\EcommerceBackEnd\log.txt";
-
-            using (StreamWriter streamWriter =  new StreamWriter(caminhoArquivoLog, true))
+            using (StreamWriter streamWriter = new StreamWriter(caminhoArquivoLog, true))
             {
                 try
                 {
-                    streamWriter.WriteLine(mensgem);
-                    streamWriter.Close();
+                    streamWriter.WriteLine($"[{DateTime.Now}] {mensagem}");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    Console.WriteLine($"Erro ao escrever no log: {ex.Message}");
                 }
             }
         }

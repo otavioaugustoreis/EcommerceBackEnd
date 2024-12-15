@@ -20,26 +20,36 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Adiciona o provedor de log personalizado(CustomLoggerProvider) ao sistema de log do ASP.NET Core, 
-//definindo o nível mínimo de log como o logLevel.Information
-builder.Logging.AddConfigurationsLogger();
+string file = Environment.GetEnvironmentVariable(@"LOG_FILE_PATH") ?? @"C:\Users\oaugu\source\repos\TreinandoPráticasApi\log.txt";
 
-//Ignorando referência ciclica com JSON
+builder.Logging.AddConfigurationsLogger(file);
+
+if (builder?.Logging == null)
+{
+    throw new InvalidOperationException("O sistema de logging não foi inicializado corretamente.");
+}
+
+var loggers = builder.Services.BuildServiceProvider().GetRequiredService<ILoggerFactory>().CreateLogger<Program>(); 
+
+builder.Services.AddDIPScoppedClasse(loggers);
+builder.Services.AddDIPSingletonClasse(loggers);
+builder.Services.AddMapperStartup();
 builder.Services.AddCofigurationJson();
 
+
+string dbPassWord = Environment.GetEnvironmentVariable("DB_PASSWORD");
+
 //Configurando conexão com banco de dados
-string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection")
+    .Replace("%DB_PASSWORD%", dbPassWord);
+
 builder.Services.AddConectionBD(mySqlConnection);
 
-var valor1 = builder.Configuration["chave1"];
 
-//Vai criar uma instancia unica por request
-builder.Services.AddDIPScoppedClasse();
-
-//Mapper DTO
-builder.Services.AddMapperStartup();
 
 var app = builder.Build();
+
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
 
 using (var scope = app.Services.CreateScope())
 {
@@ -57,12 +67,16 @@ using (var scope = app.Services.CreateScope())
 
 //Aqui fazemos as configurações dos middlewares usando a variável app
 // Configure the HTTP request pipeline.
+
+
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.ConfigureExceptionHandler();
+    app.ConfigureExceptionHandler(logger);
 }
+
 
 //Defino os middlewares para direcionar a aplicação de http para https
 app.UseHttpsRedirection();
@@ -77,4 +91,7 @@ app.UseAuthorization();
 //Mapeamento dos controladores
 app.MapControllers();
 //Usado apra adiconar um middleware terminal tambem
+
+logger.LogInformation("Aplicação iniciada em modo {Environment}.", app.Environment.EnvironmentName);
+
 app.Run();

@@ -17,8 +17,6 @@ namespace TreinandoPráticasApi.Controllers
     {
 
         private readonly IUnitOfWork _uof;
-
-        //Classe para acessar os arquivos JSON
         private readonly IConfiguration configuration;
         private readonly IMapper _mapper;
 

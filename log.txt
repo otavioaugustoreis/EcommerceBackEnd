@@ -569,3 +569,263 @@ SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
 FROM `TB_CATEGORIA` AS `t`
 WHERE `t`.`pk_id` = @__id_0
 LIMIT 1
+[14/12/2024 20:50:18] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 20:50:18] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 20:50:18] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 20:50:18] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 20:50:18] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 20:50:18] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 20:50:18] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 20:50:18] Information: 0 - Logger customizado registrado.
+[14/12/2024 20:53:34] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 20:53:34] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 20:53:34] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 20:53:34] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 20:53:34] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 20:53:34] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 20:53:34] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 20:53:34] Information: 0 - Logger customizado registrado.
+[14/12/2024 21:21:57] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 21:21:57] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 21:21:57] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 21:21:57] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 21:21:57] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 21:21:57] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 21:21:57] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 21:21:57] Information: 0 - Registrando dependências Singletons
+[14/12/2024 21:25:45] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 21:25:45] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 21:25:45] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 21:25:45] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 21:25:45] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 21:25:45] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 21:25:45] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 21:25:45] Information: 0 - Registrando dependências Singletons
+[14/12/2024 21:36:38] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 21:36:38] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 21:36:38] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 21:36:38] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 21:36:38] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 21:36:38] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 21:36:38] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 21:36:38] Information: 0 - Registrando dependências Singletons
+[14/12/2024 21:41:24] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 21:41:24] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 21:41:24] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 21:41:24] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 21:41:24] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 21:41:24] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 21:41:24] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 21:41:24] Information: 0 - Registrando dependências Singletons
+[14/12/2024 21:44:16] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 21:44:17] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 21:44:17] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 21:44:17] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 21:44:17] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 21:44:17] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 21:44:17] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 21:44:17] Information: 0 - Registrando dependências Singletons
+[14/12/2024 22:16:24] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 22:16:25] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 22:16:25] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 22:16:25] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 22:16:25] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 22:16:25] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 22:16:25] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 22:16:25] Information: 0 - Registrando dependências Singletons
+[14/12/2024 22:21:28] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 22:21:28] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 22:21:28] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 22:21:28] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 22:21:28] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 22:21:28] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 22:21:28] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 22:21:28] Information: 0 - Registrando dependências Singletons
+[14/12/2024 22:21:32] Error: 20102 - Failed executing DbCommand (188ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[14/12/2024 22:21:32] Error: 10100 - An exception occurred while iterating over the results of a query for context type 'TreinandoPráticasApi.Data.Context.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Table 'treinandoapi.tb_categoria' doesn't exist
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+Exceção: Table 'treinandoapi.tb_categoria' doesn't exist
+Rastreamento:    at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+[14/12/2024 22:21:33] Information: 0 - Aplicação iniciada em modo Development.
+[14/12/2024 22:21:33] Information: 14 - Now listening on: http://localhost:5051
+[14/12/2024 22:21:33] Information: 0 - Application started. Press Ctrl+C to shut down.
+[14/12/2024 22:21:33] Information: 0 - Hosting environment: Development
+[14/12/2024 22:21:33] Information: 0 - Content root path: C:\Users\oaugu\source\repos\TreinandoPráticasApi\TreinandoPráticasApi
+[14/12/2024 22:30:20] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 22:30:20] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 22:30:20] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 22:30:20] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 22:30:20] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 22:30:20] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 22:30:20] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 22:30:20] Information: 0 - Registrando dependências Singletons
+[14/12/2024 22:30:22] Error: 20102 - Failed executing DbCommand (73ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[14/12/2024 22:30:23] Error: 10100 - An exception occurred while iterating over the results of a query for context type 'TreinandoPráticasApi.Data.Context.AppDbContext'.
+MySqlConnector.MySqlException (0x80004005): Table 'treinandoapi.tb_categoria' doesn't exist
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+Exceção: Table 'treinandoapi.tb_categoria' doesn't exist
+Rastreamento:    at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MySqlConnector.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in /_/src/MySqlConnector/MySqlCommand.cs:line 290
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+[14/12/2024 22:30:23] Information: 0 - Aplicação iniciada em modo Development.
+[14/12/2024 22:30:23] Information: 14 - Now listening on: http://localhost:5051
+[14/12/2024 22:30:23] Information: 0 - Application started. Press Ctrl+C to shut down.
+[14/12/2024 22:30:23] Information: 0 - Hosting environment: Development
+[14/12/2024 22:30:23] Information: 0 - Content root path: C:\Users\oaugu\source\repos\TreinandoPráticasApi\TreinandoPráticasApi
+[14/12/2024 22:31:34] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 22:31:34] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 22:31:34] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 22:31:34] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 22:31:34] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 22:31:34] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 22:31:34] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 22:31:34] Information: 0 - Registrando dependências Singletons
+[14/12/2024 22:31:59] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/12/2024 22:31:59] Information: 0 - Serviço SeedingServiceData registrado.
+[14/12/2024 22:31:59] Information: 0 - Serviço IProduto registrado.
+[14/12/2024 22:31:59] Information: 0 - Serviço IUsuario registrado.
+[14/12/2024 22:31:59] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/12/2024 22:31:59] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/12/2024 22:31:59] Information: 0 - Serviço IUnitOfWork registrado.
+[14/12/2024 22:31:59] Information: 0 - Registrando dependências Singletons
+[14/12/2024 22:32:01] Information: 20101 - Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE DATABASE `treinandoAPI`;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (209ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `__EFMigrationsHistory` (
+    `MigrationId` varchar(150) CHARACTER SET utf8mb4 NOT NULL,
+    `ProductVersion` varchar(32) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK___EFMigrationsHistory` PRIMARY KEY (`MigrationId`)
+) CHARACTER SET=utf8mb4;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (36ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='treinandoAPI' AND TABLE_NAME='__EFMigrationsHistory';
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[14/12/2024 22:32:02] Information: 20402 - Applying migration '20241020044123_InitialMigrations'.
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER DATABASE CHARACTER SET utf8mb4;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (53ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_USUARIO` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `ds_nome` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `ds_cpf` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `nr_idade` int NOT NULL,
+    `ds_email` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_USUARIO` PRIMARY KEY (`pk_id`)
+) CHARACTER SET=utf8mb4;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20241020044123_InitialMigrations', '8.0.10');
+[14/12/2024 22:32:02] Information: 20402 - Applying migration '20241211004114_MigracaoCerta'.
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_USUARIO` ADD `fk_pedido` int NOT NULL DEFAULT 0;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_CATEGORIA` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `ds_nome` varchar(80) CHARACTER SET utf8mb4 NOT NULL,
+    `ds_imagem` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_CATEGORIA` PRIMARY KEY (`pk_id`)
+) CHARACTER SET=utf8mb4;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (86ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_PEDIDO` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `fk_usuario` int NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_PEDIDO` PRIMARY KEY (`pk_id`),
+    CONSTRAINT `FK_TB_PEDIDO_TB_USUARIO_fk_usuario` FOREIGN KEY (`fk_usuario`) REFERENCES `TB_USUARIO` (`pk_id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (81ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_PRODUTO` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `ds_nome` longtext CHARACTER SET utf8mb4 NOT NULL,
+    `nr_quantidade` int NOT NULL,
+    `fk_categoria` int NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_PRODUTO` PRIMARY KEY (`pk_id`),
+    CONSTRAINT `FK_TB_PRODUTO_TB_CATEGORIA_fk_categoria` FOREIGN KEY (`fk_categoria`) REFERENCES `TB_CATEGORIA` (`pk_id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[14/12/2024 22:32:02] Information: 20101 - Executed DbCommand (78ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `TB_PEDIDOITEM` (
+    `pk_id` int NOT NULL AUTO_INCREMENT,
+    `nr_valor` double NOT NULL,
+    `nr_quantidade` int NOT NULL,
+    `fk_pedido` int NOT NULL,
+    `fk_produto` int NOT NULL,
+    `dh_inclusao` datetime(6) NOT NULL,
+    CONSTRAINT `PK_TB_PEDIDOITEM` PRIMARY KEY (`pk_id`),
+    CONSTRAINT `FK_TB_PEDIDOITEM_TB_PEDIDO_fk_pedido` FOREIGN KEY (`fk_pedido`) REFERENCES `TB_PEDIDO` (`pk_id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_TB_PEDIDOITEM_TB_PRODUTO_fk_produto` FOREIGN KEY (`fk_produto`) REFERENCES `TB_PRODUTO` (`pk_id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[14/12/2024 22:32:03] Information: 20101 - Executed DbCommand (258ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PEDIDO_fk_usuario` ON `TB_PEDIDO` (`fk_usuario`);
+[14/12/2024 22:32:03] Information: 20101 - Executed DbCommand (338ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PEDIDOITEM_fk_pedido` ON `TB_PEDIDOITEM` (`fk_pedido`);
+[14/12/2024 22:32:04] Information: 20101 - Executed DbCommand (113ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PEDIDOITEM_fk_produto` ON `TB_PEDIDOITEM` (`fk_produto`);
+[14/12/2024 22:32:04] Information: 20101 - Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_TB_PRODUTO_fk_categoria` ON `TB_PRODUTO` (`fk_categoria`);
+[14/12/2024 22:32:04] Information: 20101 - Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20241211004114_MigracaoCerta', '8.0.10');
+[14/12/2024 22:32:04] Information: 20402 - Applying migration '20241215013138_notebook'.
+[14/12/2024 22:32:04] Information: 20101 - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_PRODUTO` DROP FOREIGN KEY `FK_TB_PRODUTO_TB_CATEGORIA_fk_categoria`;
+[14/12/2024 22:32:04] Information: 20101 - Executed DbCommand (155ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_PRODUTO` MODIFY COLUMN `fk_categoria` int NULL;
+[14/12/2024 22:32:05] Information: 20101 - Executed DbCommand (417ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_PRODUTO` ADD CONSTRAINT `FK_TB_PRODUTO_TB_CATEGORIA_fk_categoria` FOREIGN KEY (`fk_categoria`) REFERENCES `TB_CATEGORIA` (`pk_id`);
+[14/12/2024 22:32:05] Information: 20101 - Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20241215013138_notebook', '8.0.10');
