@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.Xml;
 using TreinandoPráticasApi._1___Application.Models;
@@ -13,14 +14,14 @@ namespace TreinandoPráticasApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriaController : ControllerBase, IControllerPattern<CategoriaModel>
+    public class CategoriaController : ControllerBase, IControllerPattern<CategoriaModelResponse>
     {
 
         private readonly IUnitOfWork _uof;
         private readonly IConfiguration configuration;
         private readonly IMapper _mapper;
 
-        
+
         public CategoriaController(IUnitOfWork _uof, IConfiguration configuration, IMapper mapper)
         {
             this._uof = _uof;
@@ -44,57 +45,57 @@ namespace TreinandoPráticasApi.Controllers
         //Filtro está relacionado com o Logging!!
         // [ServiceFilter(typeof(ApiLoggingFilter))]
         [HttpGet]
-        public ActionResult<IEnumerable<CategoriaModel>> Get()
+        public ActionResult<IEnumerable<CategoriaModelResponse>> Get()
         {
 
             var categorias = _uof.CategoriaRepository.Get();
 
             if (!categorias.Any() || categorias is null) return BadRequest("Não existe categoria");
 
-            var categoriaDto = _mapper.Map<IEnumerable<CategoriaModel>>(categorias);
-           
+            var categoriaDto = _mapper.Map<IEnumerable<CategoriaModelResponse>>(categorias);
+
             return Ok(categoriaDto);
         }
 
-        
+
         //Esse GetId é FromQuery, ou seja, você escreve via URL e não no HTTP
         //QueryString
         [HttpGet("categoria/", Name = "GetCategoriaById")]
-        public ActionResult<CategoriaModel> GetId([FromQuery] int id)
+        public ActionResult<CategoriaModelResponse> GetId([FromQuery] int id)
         {
-            CategoriaEntity c1 =  _uof.CategoriaRepository.GetId(x => x.Id == id);
+            CategoriaEntity c1 = _uof.CategoriaRepository.GetId(x => x.Id == id);
 
             if (c1 is null) return BadRequest("Categoria não encontrada");
 
-            var categoriaModel = _mapper.Map<CategoriaModel>(c1);
+            var categoriaModel = _mapper.Map<CategoriaModelResponse>(c1);
 
             return Ok(categoriaModel);
         }
 
         [HttpPost()]
-        public ActionResult<CategoriaModel> Post(CategoriaModel entidade)
+        public ActionResult<CategoriaModelResponse> Post(CategoriaModelResponse entidade)
         {
-            if (entidade is {  DsNome: null}) return BadRequest();
+            if (entidade is { DsNome: null }) return BadRequest();
 
             var categoria = _mapper.Map<CategoriaEntity>(entidade);
 
             _uof.CategoriaRepository.Post(categoria);
             _uof.Commit();
 
-            var novoProdutoDto = _mapper.Map<CategoriaModel>(categoria);
-            
+            var novoProdutoDto = _mapper.Map<CategoriaModelResponse>(categoria);
+
             return new CreatedAtRouteResult("GetCategoriaById", new { id = novoProdutoDto.Id }, novoProdutoDto);
         }
 
 
         [HttpPut("{id:int:min(1)}")]
-        public ActionResult<CategoriaModel> Put(int id, CategoriaModel t)
+        public ActionResult<CategoriaModelResponse> Put(int id, CategoriaModelResponse t)
         {
-            if (id != t.Id) return BadRequest("Id diferente.");  
-            
+            if (id != t.Id) return BadRequest("Id diferente.");
+
             CategoriaEntity c1 = _uof.CategoriaRepository.GetId(c => c.Id == id);
 
-            if (c1.Id != t.Id || t is null ) return NotFound("Categoria não encontrada");
+            if (c1.Id != t.Id || t is null) return NotFound("Categoria não encontrada");
 
             var dto = _mapper.Map(t, c1);
 
@@ -105,16 +106,41 @@ namespace TreinandoPráticasApi.Controllers
         }
 
         [HttpDelete("{id:int:min(1)}")]
-        public ActionResult<CategoriaModel> Delete(int id)
+        public ActionResult<CategoriaModelResponse> Delete(int id)
         {
             CategoriaEntity c1 = _uof.CategoriaRepository.GetId(c => c.Id == id);
-            
+
             if (c1 is null) return NotFound("Categoria não encontrada ");
 
             _uof.CategoriaRepository.Delete(c1);
             _uof.Commit();
 
             return NoContent();
+        }
+
+        [HttpPatch("{id}/UpdatePartial")]
+        public ActionResult<CategoriaModelResponse> Patch(int id,
+            JsonPatchDocument<CategoriaModelUpdateRequest> patchCategoria)
+        {
+            if (patchCategoria is null || id <= 0)
+            {
+                return BadRequest();
+            }
+
+            CategoriaEntity c1 = _uof.CategoriaRepository.GetId(c => c.Id == id);
+
+            var dto = _mapper.Map<CategoriaModelUpdateRequest>(c1);
+
+            patchCategoria.ApplyTo(dto);
+
+            if (!ModelState.IsValid || TryValidateModel(dto)) return BadRequest();
+
+            _mapper.Map(dto, c1);
+            _uof.CategoriaRepository.Put(c1);
+            _uof.Commit();
+
+            return Ok(_mapper.Map<CategoriaModelResponse>(c1));
+
         }
 
     }

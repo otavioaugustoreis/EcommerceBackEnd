@@ -2,7 +2,7 @@
 
 namespace TreinandoPráticasApi._1___Application.Models
 {
-    public  record  CategoriaModel(int Id, 
+    public  record  CategoriaModelResponse(int Id, 
                                    string DsNome,
                                    string DsImagem)
     {

@@ -28,7 +28,7 @@ namespace TreinandoPráticasApi.Domain.Entities
 
         [Column("fk_categoria")]
         public int Fkcategoria { get; set; }
-        public CategoriaModel _CategoriaModel { get; set; }
+        public CategoriaModelResponse _CategoriaModel { get; set; }
 
         public ICollection<PedidoItemEntity> pedidoItens { get; set; }
     }

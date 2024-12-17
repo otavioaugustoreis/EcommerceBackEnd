@@ -8,10 +8,11 @@ namespace TreinandoPráticasApi._1___Application.Models
         public DomainModelMappingProfile()
         {
 
-            CreateMap<CategoriaEntity, CategoriaModel>().ReverseMap();
+            CreateMap<CategoriaEntity, CategoriaModelResponse>().ReverseMap();
             CreateMap<ProdutoEntity, ProdutoModel>().ReverseMap();
             CreateMap<PedidoEntity, PedidoModel>().ReverseMap();
             CreateMap<UsuarioEntity, UsuarioModel>().ReverseMap();
+            CreateMap<CategoriaEntity, CategoriaModelUpdateRequest>().ReverseMap();
         }
     }
 
