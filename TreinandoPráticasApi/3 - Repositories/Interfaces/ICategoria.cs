@@ -5,6 +5,6 @@ namespace TreinandoPráticasApi.Repositories
 {
     public interface ICategoria : IRepository<CategoriaEntity>
     {
-        IEnumerable<CategoriaEntity> GetCategorias(CategoriaParameters categoriaParameters);
+        PagedList<CategoriaEntity> GetCategorias(CategoriaParameters categoriaParameters);
     }
 }

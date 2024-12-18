@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.JsonPatch.Exceptions;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Security.Cryptography.Xml;
 using TreinandoPráticasApi._1___Application.Models;
 using TreinandoPráticasApi._1___Application.Pagination;
@@ -51,8 +52,20 @@ namespace TreinandoPráticasApi.Controllers
         public ActionResult<IEnumerable<CategoriaModelResponse>> GetPaginacao([FromQuery] CategoriaParameters categoriaParameters)
         { 
             var categorias = _uof.CategoriaRepository.GetCategorias(categoriaParameters);
-            
-            if(!categorias.Any() || categorias is null) return BadRequest("Não existe categoria");
+
+            var metadata = new
+            {
+                categorias.TotalCount,
+                categorias.PageSize,
+                categorias.CurrentPage,
+                categorias.TotalPages,
+                categorias.HasNext,
+                categorias.HasPrevius
+
+            };
+
+            //Serializando os objetos do metadata no formato Json
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
 
             var categoriaDto = _mapper.Map<IEnumerable<CategoriaModelResponse>>(categorias);
 

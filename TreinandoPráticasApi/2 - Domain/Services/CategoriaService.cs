@@ -1,4 +1,5 @@
-﻿using TreinandoPráticasApi._1___Application.Pagination;
+﻿using Pomelo.EntityFrameworkCore.MySql.Storage.Internal;
+using TreinandoPráticasApi._1___Application.Pagination;
 using TreinandoPráticasApi.Data.Context;
 using TreinandoPráticasApi.Entities;
 using TreinandoPráticasApi.Repositories;
@@ -11,17 +12,13 @@ namespace TreinandoPráticasApi.Services
         {
         }
 
-        public  IEnumerable<CategoriaEntity> GetCategorias(CategoriaParameters categoriaParameters)
+        public PagedList<CategoriaEntity> GetCategorias(CategoriaParameters categoriaParameters)
         {   
-            return Get()
-                //Ordenadno pelo nome
-                  .OrderBy(on => on.DsNome)
-                  //Pular os produtos das páginas anteriores
-                  .Skip((categoriaParameters.PageNumber -1 ) * categoriaParameters.PageSize)
-                  //Selecionar a quantidade de produto especificada pelo tamanho da página
-                  .Take(categoriaParameters.PageSize)
-                  .ToList();
-        }
+            var categorias = Get().OrderBy(p => p.Id).AsQueryable();
+            PagedList<CategoriaEntity> categoriasOrdenados = PagedList<CategoriaEntity>.ToPagedList(categorias, categoriaParameters.PageNumber,
+                                                                            categoriaParameters.PageSize);
+            return categoriasOrdenados;
+            }
 
     
     }
