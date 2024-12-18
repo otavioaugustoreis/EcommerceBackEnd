@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System.Text.Json.Serialization;
 using TreinandoPráticasApi.Exceptions;
 
 namespace TreinandoPráticasApi.Configs.Providers
@@ -11,7 +12,13 @@ namespace TreinandoPráticasApi.Configs.Providers
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-            })
+            }).AddNewtonsoftJson((
+            //Configurando o NewTonSoftJso. Essa linha define que as propriedades dos objetos serializados e desserializados devem seguir o padrão camelCase.
+            options =>
+            {
+                options.SerializerSettings.ContractResolver =
+                    new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+            }));
 
             return services;
         }

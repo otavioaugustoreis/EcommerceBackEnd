@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.JsonPatch.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.Xml;
 using TreinandoPráticasApi._1___Application.Models;
+using TreinandoPráticasApi._1___Application.Pagination;
 using TreinandoPráticasApi.Configs.Filters;
 using TreinandoPráticasApi.Entities;
 using TreinandoPráticasApi.Repositories;
@@ -12,9 +14,9 @@ using TreinandoPráticasApi.RepositoriesPattern;
 
 namespace TreinandoPráticasApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class CategoriaController : ControllerBase, IControllerPattern<CategoriaModelResponse>
+    public class CategoriaController : ControllerBase
     {
 
         private readonly IUnitOfWork _uof;
@@ -41,10 +43,25 @@ namespace TreinandoPráticasApi.Controllers
         //}
 
 
-
         //Filtro está relacionado com o Logging!!
         // [ServiceFilter(typeof(ApiLoggingFilter))]
-        [HttpGet]
+
+        //Get com paginação
+        [HttpGet("paginacao/")]
+        public ActionResult<IEnumerable<CategoriaModelResponse>> GetPaginacao([FromQuery] CategoriaParameters categoriaParameters)
+        { 
+            var categorias = _uof.CategoriaRepository.GetCategorias(categoriaParameters);
+            
+            if(!categorias.Any() || categorias is null) return BadRequest("Não existe categoria");
+
+            var categoriaDto = _mapper.Map<IEnumerable<CategoriaModelResponse>>(categorias);
+
+            return Ok(categoriaDto);
+        }
+
+
+            //Get padrão
+            [HttpGet]
         public ActionResult<IEnumerable<CategoriaModelResponse>> Get()
         {
 
@@ -72,7 +89,7 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaModel);
         }
 
-        [HttpPost()]
+        [HttpPost]
         public ActionResult<CategoriaModelResponse> Post(CategoriaModelResponse entidade)
         {
             if (entidade is { DsNome: null }) return BadRequest();
@@ -80,7 +97,7 @@ namespace TreinandoPráticasApi.Controllers
             var categoria = _mapper.Map<CategoriaEntity>(entidade);
 
             _uof.CategoriaRepository.Post(categoria);
-            _uof.Commit();
+            
 
             var novoProdutoDto = _mapper.Map<CategoriaModelResponse>(categoria);
 
@@ -127,19 +144,25 @@ namespace TreinandoPráticasApi.Controllers
                 return BadRequest();
             }
 
-            CategoriaEntity c1 = _uof.CategoriaRepository.GetId(c => c.Id == id);
+            var categoriaEntity = _uof.CategoriaRepository.GetId(c => c.Id == id);
 
-            var dto = _mapper.Map<CategoriaModelUpdateRequest>(c1);
+            var categoriaDto = _mapper.Map<CategoriaModelUpdateRequest>(categoriaEntity);
 
-            patchCategoria.ApplyTo(dto);
+            try
+            {
+                patchCategoria.ApplyTo(categoriaDto, ModelState);
+            }
+            catch (JsonPatchException ex)
+            {
+                return BadRequest($"Erro ao aplicar o patch: {ex.Message}");
+            }
 
-            if (!ModelState.IsValid || TryValidateModel(dto)) return BadRequest();
+            if (!ModelState.IsValid ) return BadRequest(ModelState);
 
-            _mapper.Map(dto, c1);
-            _uof.CategoriaRepository.Put(c1);
+            _mapper.Map(categoriaDto, categoriaEntity);
+            _uof.CategoriaRepository.Put(categoriaEntity);
             _uof.Commit();
-
-            return Ok(_mapper.Map<CategoriaModelResponse>(c1));
+            return Ok(_mapper.Map<CategoriaModelResponse>(categoriaEntity));
 
         }
 

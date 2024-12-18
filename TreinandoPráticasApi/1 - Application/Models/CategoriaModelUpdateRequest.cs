@@ -1,7 +1,8 @@
 ﻿namespace TreinandoPráticasApi._1___Application.Models
 {
-    public record CategoriaModelUpdateRequest(int Id,
-                                       string DsNome)
+
+    //No JsonPATCH ter somente os atributos que irei alterar
+    public record CategoriaModelUpdateRequest(string DsNome)
     {
     }
 }

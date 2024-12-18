@@ -846,3 +846,375 @@ SELECT EXISTS (
 [16/12/2024 21:11:00] Information: 0 - Application started. Press Ctrl+C to shut down.
 [16/12/2024 21:11:00] Information: 0 - Hosting environment: Development
 [16/12/2024 21:11:00] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:17:11] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:17:11] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:17:11] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:17:11] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:17:11] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:17:11] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:17:11] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:17:11] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:17:14] Information: 20101 - Executed DbCommand (52ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:17:15] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:17:15] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:17:15] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:17:15] Information: 0 - Hosting environment: Development
+[17/12/2024 21:17:15] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:20:15] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:20:15] Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 21:30:45] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:30:45] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:30:45] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:30:45] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:30:45] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:30:45] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:30:45] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:30:45] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:30:47] Information: 20101 - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:30:47] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:30:47] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:30:47] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:30:47] Information: 0 - Hosting environment: Development
+[17/12/2024 21:30:47] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:31:56] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:31:56] Information: 20101 - Executed DbCommand (27ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:32:01] Information: 20101 - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:33:57] Information: 20101 - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:36:52] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:36:52] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:36:52] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:36:52] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:36:52] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:36:52] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:36:52] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:36:52] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:36:53] Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:36:53] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:36:53] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:36:53] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:36:53] Information: 0 - Hosting environment: Development
+[17/12/2024 21:36:53] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:37:31] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:37:34] Information: 20101 - Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:38:06] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:38:06] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:38:06] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:38:06] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:38:06] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:38:06] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:38:06] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:38:06] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:38:07] Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:38:07] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:38:07] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:38:07] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:38:07] Information: 0 - Hosting environment: Development
+[17/12/2024 21:38:07] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:38:27] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:38:34] Information: 20101 - Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:41:48] Information: 20101 - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:44:09] Information: 20101 - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:46:21] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:46:21] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:46:21] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:46:21] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:46:21] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:46:21] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:46:21] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:46:21] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:46:23] Information: 20101 - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:46:23] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:46:23] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:46:23] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:46:23] Information: 0 - Hosting environment: Development
+[17/12/2024 21:46:23] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:46:40] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:46:44] Information: 20101 - Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:47:05] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:47:05] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:47:05] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:47:05] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:47:05] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:47:05] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:47:05] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:47:05] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:47:06] Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:47:06] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:47:07] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:47:07] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:47:07] Information: 0 - Hosting environment: Development
+[17/12/2024 21:47:07] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:47:20] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:47:25] Information: 20101 - Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:47:33] Information: 20101 - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:50:38] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:50:38] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:50:38] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:50:38] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:50:38] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:50:38] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:50:38] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:50:38] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:50:40] Information: 20101 - Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:50:40] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:50:40] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:50:40] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:50:40] Information: 0 - Hosting environment: Development
+[17/12/2024 21:50:40] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:50:56] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:51:00] Information: 20101 - Executed DbCommand (19ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:56:35] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:56:35] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:56:35] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:56:35] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:56:35] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:56:35] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:56:35] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:56:35] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:56:37] Information: 20101 - Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:56:37] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:56:37] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:56:37] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:56:37] Information: 0 - Hosting environment: Development
+[17/12/2024 21:56:37] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:57:00] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:57:01] Information: 20101 - Executed DbCommand (22ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:57:01] Information: 20101 - Executed DbCommand (19ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 4000), @p2='?' (Size = 80)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `TB_CATEGORIA` SET `dh_inclusao` = @p0, `ds_imagem` = @p1, `ds_nome` = @p2
+WHERE `pk_id` = @p3;
+SELECT ROW_COUNT();
+[17/12/2024 21:57:37] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 21:57:37] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 21:57:37] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 21:57:37] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 21:57:37] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 21:57:37] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 21:57:37] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 21:57:37] Information: 0 - Registrando dependências Singletons
+[17/12/2024 21:57:39] Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 21:57:39] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 21:57:39] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 21:57:39] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 21:57:39] Information: 0 - Hosting environment: Development
+[17/12/2024 21:57:39] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 21:58:14] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 21:58:15] Information: 20101 - Executed DbCommand (21ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 21:58:15] Information: 20101 - Executed DbCommand (3ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = DateTime), @p1='?' (Size = 4000), @p2='?' (Size = 80)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `TB_CATEGORIA` SET `dh_inclusao` = @p0, `ds_imagem` = @p1, `ds_nome` = @p2
+WHERE `pk_id` = @p3;
+SELECT ROW_COUNT();
+[17/12/2024 22:28:29] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 22:28:29] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 22:28:29] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 22:28:29] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 22:28:29] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 22:28:29] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 22:28:29] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 22:28:29] Information: 0 - Registrando dependências Singletons
+[17/12/2024 22:28:30] Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 22:28:30] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 22:28:30] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 22:28:30] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 22:28:30] Information: 0 - Hosting environment: Development
+[17/12/2024 22:28:30] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 22:28:48] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 22:28:48] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 22:28:48] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 22:28:48] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 22:28:48] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 22:28:48] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 22:28:48] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 22:28:48] Information: 0 - Registrando dependências Singletons
+[17/12/2024 22:28:49] Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 22:28:49] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 22:28:49] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 22:28:49] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 22:28:49] Information: 0 - Hosting environment: Development
+[17/12/2024 22:28:49] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 22:29:20] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 22:29:21] Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:31:51] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 22:31:51] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 22:31:51] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 22:31:51] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 22:31:51] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 22:31:51] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 22:31:51] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 22:31:51] Information: 0 - Registrando dependências Singletons
+[17/12/2024 22:31:52] Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 22:31:52] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 22:31:52] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 22:31:52] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 22:31:53] Information: 0 - Hosting environment: Development
+[17/12/2024 22:31:53] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 22:31:59] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 22:31:59] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:33:45] Information: 20101 - Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 80)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `TB_CATEGORIA` (`pk_id`, `dh_inclusao`, `ds_imagem`, `ds_nome`)
+VALUES (@p0, @p1, @p2, @p3);
+[17/12/2024 22:33:53] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:34:10] Information: 20101 - Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 80)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `TB_CATEGORIA` (`pk_id`, `dh_inclusao`, `ds_imagem`, `ds_nome`)
+VALUES (@p0, @p1, @p2, @p3);
+[17/12/2024 22:34:54] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:35:00] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:35:01] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:35:02] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:35:19] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[17/12/2024 22:35:19] Information: 0 - Serviço SeedingServiceData registrado.
+[17/12/2024 22:35:19] Information: 0 - Serviço IProduto registrado.
+[17/12/2024 22:35:19] Information: 0 - Serviço IUsuario registrado.
+[17/12/2024 22:35:19] Information: 0 - Serviço genérico IRepository<> registrado.
+[17/12/2024 22:35:19] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[17/12/2024 22:35:19] Information: 0 - Serviço IUnitOfWork registrado.
+[17/12/2024 22:35:19] Information: 0 - Registrando dependências Singletons
+[17/12/2024 22:35:20] Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[17/12/2024 22:35:20] Information: 0 - Aplicação iniciada em modo Development.
+[17/12/2024 22:35:21] Information: 14 - Now listening on: http://localhost:5051
+[17/12/2024 22:35:21] Information: 0 - Application started. Press Ctrl+C to shut down.
+[17/12/2024 22:35:21] Information: 0 - Hosting environment: Development
+[17/12/2024 22:35:21] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[17/12/2024 22:35:41] Warning: 3 - Failed to determine the https port for redirect.
+[17/12/2024 22:35:42] Information: 20101 - Executed DbCommand (38ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 80)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `TB_CATEGORIA` (`pk_id`, `dh_inclusao`, `ds_imagem`, `ds_nome`)
+VALUES (@p0, @p1, @p2, @p3);
+[17/12/2024 22:35:58] Information: 20101 - Executed DbCommand (46ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+WHERE `t`.`pk_id` = @__id_0
+LIMIT 1
+[17/12/2024 22:36:49] Information: 20101 - Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 80)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `TB_CATEGORIA` (`pk_id`, `dh_inclusao`, `ds_imagem`, `ds_nome`)
+VALUES (@p0, @p1, @p2, @p3);
+[17/12/2024 22:36:50] Information: 20101 - Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime), @p2='?' (Size = 4000), @p3='?' (Size = 80)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+INSERT INTO `TB_CATEGORIA` (`pk_id`, `dh_inclusao`, `ds_imagem`, `ds_nome`)
+VALUES (@p0, @p1, @p2, @p3);
+[17/12/2024 22:36:53] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:38:05] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:38:11] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:38:17] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[17/12/2024 22:38:20] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
