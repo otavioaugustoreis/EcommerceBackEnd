@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Elfie.Diagnostics;
-using System.Net;
+﻿
 
 namespace TreinandoPráticasApi.Exceptions
 {

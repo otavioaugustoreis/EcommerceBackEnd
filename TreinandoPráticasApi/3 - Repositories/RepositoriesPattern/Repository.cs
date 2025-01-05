@@ -25,9 +25,20 @@ namespace TreinandoPráticasApi.Repositories
             return _context.Set<T>().AsNoTracking().ToList();
         }
 
+        public async Task<IEnumerable<T?>> GetAsync()
+        {
+            return await _context.Set<T>().ToListAsync();
+        }
+
         public T? GetId(Expression<Func<T, bool>> predicate)
         {
             return _context.Set<T>().FirstOrDefault(predicate);
+        }
+
+        public async Task<T?> GetIdAsync(Expression<Func<T, bool>> predicate)
+        {
+            return  await _context.Set<T>().FirstOrDefaultAsync(predicate);
+        
         }
 
         public T Post(T entidade)

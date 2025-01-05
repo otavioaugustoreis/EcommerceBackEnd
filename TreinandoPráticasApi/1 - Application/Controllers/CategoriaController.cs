@@ -64,7 +64,8 @@ namespace TreinandoPráticasApi.Controllers
 
             };
 
-            //Serializando os objetos do metadata no formato Json
+            //Serializando os objetos do metadata no formato Json, Headers, são as informações do retorno da API
+
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
 
             var categoriaDto = _mapper.Map<IEnumerable<CategoriaModelResponse>>(categorias);
