@@ -1,5 +1,8 @@
 ﻿
 
+using Microsoft.AspNetCore.Diagnostics;
+using System.Net;
+
 namespace TreinandoPráticasApi.Exceptions
 {
     public static class ApiExceptionMiddlewareExtesions

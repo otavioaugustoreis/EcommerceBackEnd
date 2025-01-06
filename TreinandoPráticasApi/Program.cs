@@ -41,7 +41,7 @@ string dbPassWord = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
 //Configurando conexão com banco de dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection")
-    .Replace("%DB_PASSWORD%", dbPassWord);
+    .Replace("DB_PASSWORD", dbPassWord);
 
 builder.Services.AddConectionBD(mySqlConnection);
 

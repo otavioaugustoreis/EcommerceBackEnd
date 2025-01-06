@@ -61,6 +61,10 @@ namespace TreinandoPráticasApi.Repositories.UnitOfWork
             }
         }
 
+        public async Task CommitAsync()
+        {
+            dbContext.SaveChangesAsync();
+        }
         public  void Commit()
         {
             dbContext.SaveChanges();

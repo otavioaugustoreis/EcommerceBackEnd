@@ -5,6 +5,6 @@ namespace TreinandoPráticasApi.Repositories
 {
     public interface ICategoria : IRepository<CategoriaEntity>
     {
-        PagedList<CategoriaEntity> GetCategorias(CategoriaParameters categoriaParameters);
+        PagedList<CategoriaEntity> GetCategoriasAsync(CategoriaParameters categoriaParameters);
     }
 }

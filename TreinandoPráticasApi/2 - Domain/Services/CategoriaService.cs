@@ -12,12 +12,16 @@ namespace TreinandoPráticasApi.Services
         {
         }
 
-        public PagedList<CategoriaEntity> GetCategorias(CategoriaParameters categoriaParameters)
-        {   
-            var categorias = Get().OrderBy(p => p.Id).AsQueryable();
-            PagedList<CategoriaEntity> categoriasOrdenados = PagedList<CategoriaEntity>.ToPagedList(categorias, categoriaParameters.PageNumber,
+        public PagedList<CategoriaEntity> GetCategoriasAsync(CategoriaParameters categoriaParameters)
+        {
+            //Aqui está a operação assíncrona
+            var categorias =  Get();
+            //Aqui está a operação sincrona feita na memória 
+            var categoriaOrdenada = categorias.OrderBy(p => p.Id).AsQueryable();
+
+            PagedList<CategoriaEntity> resultado = PagedList<CategoriaEntity>.ToPagedList(categoriaOrdenada, categoriaParameters.PageNumber,
                                                                             categoriaParameters.PageSize);
-            return categoriasOrdenados;
+            return resultado;
             }
 
     

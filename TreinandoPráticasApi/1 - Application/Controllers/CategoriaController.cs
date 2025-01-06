@@ -51,7 +51,7 @@ namespace TreinandoPráticasApi.Controllers
         [HttpGet("paginacao/")]
         public ActionResult<IEnumerable<CategoriaModelResponse>> GetPaginacao([FromQuery] CategoriaParameters categoriaParameters)
         { 
-            var categorias = _uof.CategoriaRepository.GetCategorias(categoriaParameters);
+            var categorias = _uof.CategoriaRepository.GetCategoriasAsync(categoriaParameters);
 
             var metadata = new
             {
@@ -84,6 +84,20 @@ namespace TreinandoPráticasApi.Controllers
             if (!categorias.Any() || categorias is null) return BadRequest("Não existe categoria");
 
             var categoriaDto = _mapper.Map<IEnumerable<CategoriaModelResponse>>(categorias);
+
+            return Ok(categoriaDto);
+        }
+
+
+        [HttpGet("categoriaAsync/")]
+        public async Task<ActionResult<IEnumerable<CategoriaModelResponse>>> GetAsync()
+        {
+
+            var categoriaAsync = await  _uof.CategoriaRepository.GetAsync();
+
+            if (categoriaAsync is null) return BadRequest("Não existe categoria"); 
+
+            var categoriaDto = _mapper.Map<IEnumerable<CategoriaModelResponse>>(categoriaAsync);
 
             return Ok(categoriaDto);
         }

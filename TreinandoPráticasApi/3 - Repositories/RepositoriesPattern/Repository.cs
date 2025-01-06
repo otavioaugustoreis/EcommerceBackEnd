@@ -27,7 +27,7 @@ namespace TreinandoPráticasApi.Repositories
 
         public async Task<IEnumerable<T?>> GetAsync()
         {
-            return await _context.Set<T>().ToListAsync();
+            return await _context.Set<T>().AsNoTracking().ToListAsync();
         }
 
         public T? GetId(Expression<Func<T, bool>> predicate)

@@ -1,11 +1,13 @@
 ﻿using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace TreinandoPráticasApi.Repositories
 {
     public interface IRepository<T>
     {
-        
-        public Task<T> GetAsync();
+
+        public Task<IEnumerable<T?>> GetAsync();
+        public Task<T?> GetIdAsync(Expression<Func<T, bool>> predicate);
         public IEnumerable<T> Get();
         public T GetId(Expression<Func<T, bool>> predicate);
         public T Post(T entidade);
