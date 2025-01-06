@@ -19,7 +19,9 @@ namespace TreinandoPráticasApi.Repositories.UnitOfWork
             this.dbContext = dbContext;
         }
 
-        public UnitOfWork() { }
+        public UnitOfWork() 
+        {
+        }
 
         public IProduto ProdutoRepository 
         {

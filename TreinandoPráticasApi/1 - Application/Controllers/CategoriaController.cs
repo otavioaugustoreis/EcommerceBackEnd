@@ -102,7 +102,6 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaDto);
         }
 
-
         //Esse GetId é FromQuery, ou seja, você escreve via URL e não no HTTP
         //QueryString
         [HttpGet("categoria/", Name = "GetCategoriaById")]
