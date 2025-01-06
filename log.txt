@@ -1458,3 +1458,160 @@ SELECT EXISTS (
 [05/01/2025 21:33:16] Information: 20101 - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
 FROM `TB_CATEGORIA` AS `t`
+[06/01/2025 09:50:03] Information: 0 - Adicionando configurações do Identity
+[06/01/2025 09:50:03] Information: 0 - Incluindo autorização e autenticação do token
+[06/01/2025 09:50:03] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[06/01/2025 09:50:03] Information: 0 - Serviço SeedingServiceData registrado.
+[06/01/2025 09:50:03] Information: 0 - Serviço IProduto registrado.
+[06/01/2025 09:50:03] Information: 0 - Serviço IUsuario registrado.
+[06/01/2025 09:50:03] Information: 0 - Serviço genérico IRepository<> registrado.
+[06/01/2025 09:50:03] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[06/01/2025 09:50:03] Information: 0 - Serviço IUnitOfWork registrado.
+[06/01/2025 09:50:03] Information: 0 - Registrando dependências Singletons
+[06/01/2025 09:53:29] Information: 0 - Adicionando configurações do Identity
+[06/01/2025 09:53:29] Information: 0 - Incluindo autorização e autenticação do token
+[06/01/2025 09:53:29] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[06/01/2025 09:53:29] Information: 0 - Serviço SeedingServiceData registrado.
+[06/01/2025 09:53:29] Information: 0 - Serviço IProduto registrado.
+[06/01/2025 09:53:29] Information: 0 - Serviço IUsuario registrado.
+[06/01/2025 09:53:29] Information: 0 - Serviço genérico IRepository<> registrado.
+[06/01/2025 09:53:29] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[06/01/2025 09:53:29] Information: 0 - Serviço IUnitOfWork registrado.
+[06/01/2025 09:53:29] Information: 0 - Registrando dependências Singletons
+[06/01/2025 09:55:44] Information: 0 - Incluindo autorização e autenticação do token
+[06/01/2025 09:55:44] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[06/01/2025 09:55:44] Information: 0 - Serviço SeedingServiceData registrado.
+[06/01/2025 09:55:44] Information: 0 - Serviço IProduto registrado.
+[06/01/2025 09:55:44] Information: 0 - Serviço IUsuario registrado.
+[06/01/2025 09:55:44] Information: 0 - Serviço genérico IRepository<> registrado.
+[06/01/2025 09:55:44] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[06/01/2025 09:55:44] Information: 0 - Serviço IUnitOfWork registrado.
+[06/01/2025 09:55:44] Information: 0 - Registrando dependências Singletons
+[06/01/2025 09:55:44] Information: 0 - Adicionando configurações do Identity
+[06/01/2025 09:59:09] Information: 0 - Incluindo autorização e autenticação do token
+[06/01/2025 09:59:09] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[06/01/2025 09:59:09] Information: 0 - Serviço SeedingServiceData registrado.
+[06/01/2025 09:59:09] Information: 0 - Serviço IProduto registrado.
+[06/01/2025 09:59:09] Information: 0 - Serviço IUsuario registrado.
+[06/01/2025 09:59:09] Information: 0 - Serviço genérico IRepository<> registrado.
+[06/01/2025 09:59:09] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[06/01/2025 09:59:09] Information: 0 - Serviço IUnitOfWork registrado.
+[06/01/2025 09:59:09] Information: 0 - Registrando dependências Singletons
+[06/01/2025 09:59:09] Information: 0 - Adicionando configurações do Identity
+[06/01/2025 09:59:26] Information: 0 - Incluindo autorização e autenticação do token
+[06/01/2025 09:59:26] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[06/01/2025 09:59:26] Information: 0 - Serviço SeedingServiceData registrado.
+[06/01/2025 09:59:26] Information: 0 - Serviço IProduto registrado.
+[06/01/2025 09:59:26] Information: 0 - Serviço IUsuario registrado.
+[06/01/2025 09:59:26] Information: 0 - Serviço genérico IRepository<> registrado.
+[06/01/2025 09:59:26] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[06/01/2025 09:59:26] Information: 0 - Serviço IUnitOfWork registrado.
+[06/01/2025 09:59:26] Information: 0 - Registrando dependências Singletons
+[06/01/2025 09:59:26] Information: 0 - Adicionando configurações do Identity
+[06/01/2025 09:59:27] Information: 20101 - Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='treinandoAPI' AND TABLE_NAME='__EFMigrationsHistory';
+[06/01/2025 09:59:27] Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='treinandoAPI' AND TABLE_NAME='__EFMigrationsHistory';
+[06/01/2025 09:59:27] Information: 20101 - Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[06/01/2025 09:59:27] Information: 20402 - Applying migration '20241215013138_notebook'.
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (66ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_PRODUTO` DROP FOREIGN KEY `FK_TB_PRODUTO_TB_CATEGORIA_fk_categoria`;
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (82ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_PRODUTO` MODIFY COLUMN `fk_categoria` int NULL;
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (82ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `TB_PRODUTO` ADD CONSTRAINT `FK_TB_PRODUTO_TB_CATEGORIA_fk_categoria` FOREIGN KEY (`fk_categoria`) REFERENCES `TB_CATEGORIA` (`pk_id`);
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20241215013138_notebook', '8.0.11');
+[06/01/2025 09:59:28] Information: 20402 - Applying migration '20250106125912_CriarTabelasIdentity'.
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `AspNetRoles` (
+    `Id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `Name` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `NormalizedName` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `ConcurrencyStamp` longtext CHARACTER SET utf8mb4 NULL,
+    CONSTRAINT `PK_AspNetRoles` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `AspNetUsers` (
+    `Id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `UserName` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `NormalizedUserName` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `Email` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `NormalizedEmail` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `EmailConfirmed` tinyint(1) NOT NULL,
+    `PasswordHash` longtext CHARACTER SET utf8mb4 NULL,
+    `SecurityStamp` longtext CHARACTER SET utf8mb4 NULL,
+    `ConcurrencyStamp` longtext CHARACTER SET utf8mb4 NULL,
+    `PhoneNumber` longtext CHARACTER SET utf8mb4 NULL,
+    `PhoneNumberConfirmed` tinyint(1) NOT NULL,
+    `TwoFactorEnabled` tinyint(1) NOT NULL,
+    `LockoutEnd` datetime(6) NULL,
+    `LockoutEnabled` tinyint(1) NOT NULL,
+    `AccessFailedCount` int NOT NULL,
+    CONSTRAINT `PK_AspNetUsers` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `AspNetRoleClaims` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `RoleId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `ClaimType` longtext CHARACTER SET utf8mb4 NULL,
+    `ClaimValue` longtext CHARACTER SET utf8mb4 NULL,
+    CONSTRAINT `PK_AspNetRoleClaims` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_AspNetRoleClaims_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `AspNetRoles` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `AspNetUserClaims` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `ClaimType` longtext CHARACTER SET utf8mb4 NULL,
+    `ClaimValue` longtext CHARACTER SET utf8mb4 NULL,
+    CONSTRAINT `PK_AspNetUserClaims` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_AspNetUserClaims_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[06/01/2025 09:59:28] Information: 20101 - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `AspNetUserLogins` (
+    `LoginProvider` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `ProviderKey` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `ProviderDisplayName` longtext CHARACTER SET utf8mb4 NULL,
+    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK_AspNetUserLogins` PRIMARY KEY (`LoginProvider`, `ProviderKey`),
+    CONSTRAINT `FK_AspNetUserLogins_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[06/01/2025 09:59:29] Information: 20101 - Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `AspNetUserRoles` (
+    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `RoleId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    CONSTRAINT `PK_AspNetUserRoles` PRIMARY KEY (`UserId`, `RoleId`),
+    CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId` FOREIGN KEY (`RoleId`) REFERENCES `AspNetRoles` (`Id`) ON DELETE CASCADE,
+    CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[06/01/2025 09:59:29] Information: 20101 - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE `AspNetUserTokens` (
+    `UserId` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `LoginProvider` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `Name` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `Value` longtext CHARACTER SET utf8mb4 NULL,
+    CONSTRAINT `PK_AspNetUserTokens` PRIMARY KEY (`UserId`, `LoginProvider`, `Name`),
+    CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY (`UserId`) REFERENCES `AspNetUsers` (`Id`) ON DELETE CASCADE
+) CHARACTER SET=utf8mb4;
+[06/01/2025 09:59:29] Information: 20101 - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_AspNetRoleClaims_RoleId` ON `AspNetRoleClaims` (`RoleId`);
+[06/01/2025 09:59:29] Information: 20101 - Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX `RoleNameIndex` ON `AspNetRoles` (`NormalizedName`);
+[06/01/2025 09:59:30] Information: 20101 - Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_AspNetUserClaims_UserId` ON `AspNetUserClaims` (`UserId`);
+[06/01/2025 09:59:30] Information: 20101 - Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_AspNetUserLogins_UserId` ON `AspNetUserLogins` (`UserId`);
+[06/01/2025 09:59:30] Information: 20101 - Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `IX_AspNetUserRoles_RoleId` ON `AspNetUserRoles` (`RoleId`);
+[06/01/2025 09:59:30] Information: 20101 - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX `EmailIndex` ON `AspNetUsers` (`NormalizedEmail`);
+[06/01/2025 09:59:30] Information: 20101 - Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX `UserNameIndex` ON `AspNetUsers` (`NormalizedUserName`);
+[06/01/2025 09:59:30] Information: 20101 - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20250106125912_CriarTabelasIdentity', '8.0.11');

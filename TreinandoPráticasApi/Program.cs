@@ -32,13 +32,11 @@ if (builder?.Logging == null)
 
 var loggers = builder.Services.BuildServiceProvider().GetRequiredService<ILoggerFactory>().CreateLogger<Program>();
 
-
 builder.Services.AddJWTAutorization(loggers);
 builder.Services.AddDIPScoppedClasse(loggers);
 builder.Services.AddDIPSingletonClasse(loggers);
 builder.Services.AddMapperStartup();
 builder.Services.AddCofigurationJson();
-
 
 string dbPassWord = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
@@ -47,6 +45,7 @@ string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConne
     .Replace("DB_PASSWORD", dbPassWord);
 
 builder.Services.AddConectionBD(mySqlConnection);
+builder.Services.AddIdentityConfiguration(loggers);
 
 
 
