@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
+using TreinandoPráticasApi._1___Application.Providers;
 using TreinandoPráticasApi._4__Data;
 using TreinandoPráticasApi.Configs.DTO;
 using TreinandoPráticasApi.Configs.Filters;
@@ -29,8 +30,10 @@ if (builder?.Logging == null)
     throw new InvalidOperationException("O sistema de logging não foi inicializado corretamente.");
 }
 
-var loggers = builder.Services.BuildServiceProvider().GetRequiredService<ILoggerFactory>().CreateLogger<Program>(); 
+var loggers = builder.Services.BuildServiceProvider().GetRequiredService<ILoggerFactory>().CreateLogger<Program>();
 
+
+builder.Services.AddJWTAutorization(loggers);
 builder.Services.AddDIPScoppedClasse(loggers);
 builder.Services.AddDIPSingletonClasse(loggers);
 builder.Services.AddMapperStartup();
@@ -86,6 +89,7 @@ app.UseHttpsRedirection();
 //            await next(context);
 //            //Adicionar código depois do request 
 //        });
+
 // Define o middleware de autorização para verificar os acessos
 app.UseAuthorization();
 //Mapeamento dos controladores
