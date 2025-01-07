@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using TreinandoPráticasApi._4__Data.Entities;
 using TreinandoPráticasApi.Entities;
 
 namespace TreinandoPráticasApi.Data.Context
 {
-    public class AppDbContext : IdentityDbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) :
             base(options)
@@ -20,13 +21,14 @@ namespace TreinandoPráticasApi.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Configurando para que o identity trabalhe com as classes que eu configurei no OnModelCreating
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<UsuarioEntity>().HasKey(u => u.Id);
             modelBuilder.Entity<ProdutoEntity>().HasKey(u => u.Id);
             modelBuilder.Entity<PedidoEntity>().HasKey(u => u.Id);
             modelBuilder.Entity<CategoriaEntity>().HasKey(u => u.Id);
             modelBuilder.Entity<PedidoItemEntity>().HasKey(u => u.Id);
-
-
 
 
             modelBuilder.Entity<UsuarioEntity>()
@@ -48,8 +50,6 @@ namespace TreinandoPráticasApi.Data.Context
                 .HasMany(p => p.produtoEntity)
                 .WithOne(u => u.categoriaEntity)
                 .HasForeignKey(u => u.Fkcategoria);
-
-            base.OnModelCreating(modelBuilder);
         }
     }
 }

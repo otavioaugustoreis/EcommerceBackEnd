@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using TreinandoPráticasApi._4__Data.Entities;
+using TreinandoPráticasApi.Data.Context;
 
 namespace TreinandoPráticasApi._1___Application.Providers
 {
@@ -45,7 +48,9 @@ namespace TreinandoPráticasApi._1___Application.Providers
                 };
             });
 
-            
+            service.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
 
             return service;
         }

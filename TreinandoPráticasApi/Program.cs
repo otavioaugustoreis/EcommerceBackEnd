@@ -30,7 +30,9 @@ if (builder?.Logging == null)
     throw new InvalidOperationException("O sistema de logging não foi inicializado corretamente.");
 }
 
-var loggers = builder.Services.BuildServiceProvider().GetRequiredService<ILoggerFactory>().CreateLogger<Program>();
+var loggers = builder.Services.BuildServiceProvider()
+    .GetRequiredService<ILoggerFactory>()
+    .CreateLogger<Program>();
 
 builder.Services.AddJWTAutorization(builder.Configuration ,loggers);
 builder.Services.AddDIPScoppedClasse(loggers);
@@ -46,7 +48,6 @@ string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConne
 
 builder.Services.AddConectionBD(mySqlConnection);
 builder.Services.AddIdentityConfiguration(loggers);
-
 
 
 var app = builder.Build();
@@ -69,8 +70,6 @@ using (var scope = app.Services.CreateScope())
 
 //Aqui fazemos as configurações dos middlewares usando a variável app
 // Configure the HTTP request pipeline.
-
-
 
 if (app.Environment.IsDevelopment())
 {
