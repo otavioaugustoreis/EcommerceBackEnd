@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.WebSockets;
 using Microsoft.CodeAnalysis.Elfie.Diagnostics;
+using TreinandoPráticasApi._2___Domain.Services;
+using TreinandoPráticasApi._3___Repositories.Interfaces;
 using TreinandoPráticasApi._4__Data;
 using TreinandoPráticasApi.Configs.Filters;
 using TreinandoPráticasApi.Logging;
@@ -33,7 +35,8 @@ namespace TreinandoPráticasApi.Providers
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             logger.LogInformation("Serviço {ServiceName} registrado.", nameof(IUnitOfWork));
 
-
+            services.AddScoped<IToken, TokenService>();
+            logger.LogInformation("Serviço {ServiceName} registrado.", nameof(IUnitOfWork));
             return services;
         }
         public static IServiceCollection AddDIPSingletonClasse(this IServiceCollection services, ILogger logger)
