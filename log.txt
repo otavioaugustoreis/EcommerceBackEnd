@@ -1615,3 +1615,39 @@ CREATE UNIQUE INDEX `UserNameIndex` ON `AspNetUsers` (`NormalizedUserName`);
 [06/01/2025 09:59:30] Information: 20101 - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
 VALUES ('20250106125912_CriarTabelasIdentity', '8.0.11');
+[06/01/2025 21:52:27] Information: 0 - Incluindo autorização e autenticação do token
+[06/01/2025 21:52:27] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[06/01/2025 21:52:27] Information: 0 - Serviço SeedingServiceData registrado.
+[06/01/2025 21:52:27] Information: 0 - Serviço IProduto registrado.
+[06/01/2025 21:52:27] Information: 0 - Serviço IUsuario registrado.
+[06/01/2025 21:52:27] Information: 0 - Serviço genérico IRepository<> registrado.
+[06/01/2025 21:52:27] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[06/01/2025 21:52:27] Information: 0 - Serviço IUnitOfWork registrado.
+[06/01/2025 21:52:27] Information: 0 - Registrando dependências Singletons
+[06/01/2025 21:52:27] Information: 0 - Adicionando configurações do Identity
+[06/01/2025 21:52:40] Information: 0 - Incluindo autorização e autenticação do token
+[06/01/2025 21:52:40] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[06/01/2025 21:52:40] Information: 0 - Serviço SeedingServiceData registrado.
+[06/01/2025 21:52:40] Information: 0 - Serviço IProduto registrado.
+[06/01/2025 21:52:40] Information: 0 - Serviço IUsuario registrado.
+[06/01/2025 21:52:40] Information: 0 - Serviço genérico IRepository<> registrado.
+[06/01/2025 21:52:40] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[06/01/2025 21:52:40] Information: 0 - Serviço IUnitOfWork registrado.
+[06/01/2025 21:52:40] Information: 0 - Registrando dependências Singletons
+[06/01/2025 21:52:40] Information: 0 - Adicionando configurações do Identity
+[06/01/2025 21:52:42] Information: 20101 - Executed DbCommand (46ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='treinandoAPI' AND TABLE_NAME='__EFMigrationsHistory';
+[06/01/2025 21:52:42] Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='treinandoAPI' AND TABLE_NAME='__EFMigrationsHistory';
+[06/01/2025 21:52:42] Information: 20101 - Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `MigrationId`, `ProductVersion`
+FROM `__EFMigrationsHistory`
+ORDER BY `MigrationId`;
+[06/01/2025 21:52:42] Information: 20402 - Applying migration '20250107005230_AjusteApplicationUser'.
+[06/01/2025 21:52:42] Information: 20101 - Executed DbCommand (378ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `AspNetUsers` ADD `RefreshToken` longtext CHARACTER SET utf8mb4 NULL;
+[06/01/2025 21:52:42] Information: 20101 - Executed DbCommand (189ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE `AspNetUsers` ADD `RefreshTokenExpiryTime` datetime(6) NOT NULL DEFAULT '0001-01-01 00:00:00';
+[06/01/2025 21:52:43] Information: 20101 - Executed DbCommand (130ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
+VALUES ('20250107005230_AjusteApplicationUser', '8.0.11');
