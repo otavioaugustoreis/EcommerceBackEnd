@@ -117,7 +117,7 @@ namespace TreinandoPráticasApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<CategoriaModelResponse> Post(CategoriaModelResponse entidade)
+        public ActionResult<CategoriaModelResponse> Post([FromBody] CategoriaModelResponse entidade)
         {
             if (entidade is { DsNome: null }) return BadRequest();
 

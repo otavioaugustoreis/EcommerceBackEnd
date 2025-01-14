@@ -20,7 +20,7 @@ namespace TreinandoPráticasApi._2___Domain.Services
             //Criando as credenciais para acessar o token        //Classe é usada para configurar a chave de assinatura para verificar a autenticidade de tokens JWT
             var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(privateKey), 
                                          SecurityAlgorithms.HmacSha256Signature);
-            
+
             //Descrição do token a partir da configuração do JSON
             var tokenDescriptor = new SecurityTokenDescriptor
             {

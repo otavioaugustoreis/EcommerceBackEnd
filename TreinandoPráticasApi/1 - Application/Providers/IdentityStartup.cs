@@ -10,9 +10,9 @@ namespace TreinandoPráticasApi._1___Application.Providers
             logger.LogInformation("Adicionando configurações do Identity");
 
             //Configurando o Identity
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+            //services.AddIdentity<IdentityUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<AppDbContext>()
+            //    .AddDefaultTokenProviders();
             return services;
         }
     }
