@@ -1,16 +1,11 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Web.Http;
 using TreinandoPráticasApi._1___Application.Models;
 using TreinandoPráticasApi._3___Repositories.Interfaces;
 using TreinandoPráticasApi._4__Data.Entities;
-using Microsoft.AspNetCore.Mvc;
-using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
-using FromBodyAttribute = Microsoft.AspNetCore.Mvc.FromBodyAttribute;
+using Microsoft.AspNetCore.Authorization;
 //using FromBodyAttribute = Microsoft.AspNetCore.Mvc.FromBodyAttribute;
 
 namespace TreinandoPráticasApi.Controllers
