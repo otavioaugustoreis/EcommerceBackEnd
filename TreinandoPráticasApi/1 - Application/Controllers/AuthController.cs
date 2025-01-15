@@ -33,7 +33,7 @@ namespace TreinandoPráticasApi.Controllers
 
         [HttpPost]
         [Route("login")]
-        public async Task<ActionResult> Login([Microsoft.AspNetCore.Mvc.FromBody] LoginModel model)
+        public async Task<ActionResult> Login([FromBody] LoginModel model)
         {
             // Validação básica do modelo
             if (model == null || string.IsNullOrEmpty(model.UserName) || string.IsNullOrEmpty(model.Password))

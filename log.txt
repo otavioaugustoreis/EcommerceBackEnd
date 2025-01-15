@@ -1957,3 +1957,47 @@ FROM `TB_CATEGORIA` AS `t`
 [09/01/2025 21:07:34] Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
 FROM `TB_CATEGORIA` AS `t`
+[14/01/2025 22:27:30] Information: 0 - Incluindo autorização e autenticação do token
+[14/01/2025 22:27:30] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/01/2025 22:27:30] Information: 0 - Serviço SeedingServiceData registrado.
+[14/01/2025 22:27:30] Information: 0 - Serviço IProduto registrado.
+[14/01/2025 22:27:30] Information: 0 - Serviço IUsuario registrado.
+[14/01/2025 22:27:30] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/01/2025 22:27:30] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/01/2025 22:27:30] Information: 0 - Serviço IUnitOfWork registrado.
+[14/01/2025 22:27:30] Information: 0 - Serviço IUnitOfWork registrado.
+[14/01/2025 22:27:30] Information: 0 - Registrando dependências Singletons
+[14/01/2025 22:27:32] Information: 0 - Adicionando configurações do Identity
+[14/01/2025 22:27:35] Information: 20101 - Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[14/01/2025 22:27:35] Information: 0 - Aplicação iniciada em modo Development.
+[14/01/2025 22:27:36] Information: 14 - Now listening on: http://localhost:5051
+[14/01/2025 22:27:36] Information: 0 - Application started. Press Ctrl+C to shut down.
+[14/01/2025 22:27:36] Information: 0 - Hosting environment: Development
+[14/01/2025 22:27:36] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[14/01/2025 22:28:11] Warning: 3 - Failed to determine the https port for redirect.
+[14/01/2025 22:28:12] Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `t`.`pk_id`, `t`.`dh_inclusao`, `t`.`ds_imagem`, `t`.`ds_nome`
+FROM `TB_CATEGORIA` AS `t`
+[14/01/2025 22:38:49] Information: 0 - Incluindo autorização e autenticação do token
+[14/01/2025 22:38:50] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[14/01/2025 22:38:50] Information: 0 - Serviço SeedingServiceData registrado.
+[14/01/2025 22:38:50] Information: 0 - Serviço IProduto registrado.
+[14/01/2025 22:38:50] Information: 0 - Serviço IUsuario registrado.
+[14/01/2025 22:38:50] Information: 0 - Serviço genérico IRepository<> registrado.
+[14/01/2025 22:38:50] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[14/01/2025 22:38:50] Information: 0 - Serviço IUnitOfWork registrado.
+[14/01/2025 22:38:50] Information: 0 - Serviço IUnitOfWork registrado.
+[14/01/2025 22:38:50] Information: 0 - Registrando dependências Singletons
+[14/01/2025 22:38:50] Information: 0 - Adicionando configurações do Identity
+[14/01/2025 22:38:52] Information: 20101 - Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[14/01/2025 22:38:52] Information: 0 - Aplicação iniciada em modo Development.
+[14/01/2025 22:38:53] Information: 14 - Now listening on: http://localhost:5051
+[14/01/2025 22:38:53] Information: 0 - Application started. Press Ctrl+C to shut down.
+[14/01/2025 22:38:53] Information: 0 - Hosting environment: Development
+[14/01/2025 22:38:53] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
