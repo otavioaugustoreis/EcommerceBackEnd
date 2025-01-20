@@ -16,7 +16,7 @@ namespace TreinandoPráticasApi._1___Application.Providers
             var secretKey = configuration["JWT:SecretKey"]
                             ?? throw new ArgumentException("Invalid secret key!!");
 
-            service.AddAuthorization();
+            
             //Configurando autenticação
             service.AddAuthentication(options =>
             {
@@ -48,9 +48,14 @@ namespace TreinandoPráticasApi._1___Application.Providers
                 };
             });
 
-            service.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+
+            service.AddAuthorization(options =>
+            {
+                //Configurando uma politica com AdminOnly
+                //Com duvidas ver a aula 144 do marcorratti
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+            });
+
 
             return service;
         }

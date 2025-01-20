@@ -94,6 +94,12 @@ app.UseAuthorization();
 //Mapeamento dos controladores
 app.MapControllers();
 //Usado apra adiconar um middleware terminal tambem
+app.Use(async (context, next) =>
+{
+    logger.LogInformation("Requisição: {Method} {Path}, Headers: {Headers}", context.Request.Method, context.Request.Path, context.Request.Headers);
+    await next();
+    logger.LogInformation("Resposta: {StatusCode}", context.Response.StatusCode);
+});
 
 logger.LogInformation("Aplicação iniciada em modo {Environment}.", app.Environment.EnvironmentName);
 

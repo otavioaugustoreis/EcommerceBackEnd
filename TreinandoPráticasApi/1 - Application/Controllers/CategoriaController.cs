@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.JsonPatch.Exceptions;
@@ -73,8 +74,7 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaDto);
         }
 
-
-            //Get padrão
+            [Authorize]
             [HttpGet]
         public ActionResult<IEnumerable<CategoriaModelResponse>> Get()
         {
@@ -88,7 +88,8 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaDto);
         }
 
-
+        //Especificando a policy para o Authorize
+        [Authorize(Policy = "AdminOnly")]
         [HttpGet("categoriaAsync/")]
         public async Task<ActionResult<IEnumerable<CategoriaModelResponse>>> GetAsync()
         {
