@@ -21,6 +21,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerStartup();
+//Nome da politica criada
+var OrigensComAcessoPermitido = "_origensComAcessoPermitido";
 
 string file = Environment.GetEnvironmentVariable(@"LOG_FILE_PATH") ?? @"C:\Users\oaugu\source\repos\TreinandoPráticasApi\log.txt";
 
@@ -40,7 +42,7 @@ builder.Services.AddDIPScoppedClasse(loggers);
 builder.Services.AddDIPSingletonClasse(loggers);
 builder.Services.AddMapperStartup();
 builder.Services.AddCofigurationJson();
-
+builder.Services.AddCorsStartup(OrigensComAcessoPermitido);
 string dbPassWord = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
 //Configurando conexão com banco de dados
@@ -90,9 +92,15 @@ app.UseHttpsRedirection();
 //        });
 
 // Define o middleware de autorização para verificar os acessos
-app.UseAuthorization();
+
+
+
+app.UseStaticFiles();
+app.UseRouting();
 //Mapeamento dos controladores
-app.MapControllers();
+
+
+
 //Usado apra adiconar um middleware terminal tambem
 app.Use(async (context, next) =>
 {
@@ -103,4 +111,7 @@ app.Use(async (context, next) =>
 
 logger.LogInformation("Aplicação iniciada em modo {Environment}.", app.Environment.EnvironmentName);
 
+app.UseCors(OrigensComAcessoPermitido);
+app.UseAuthorization();
+app.MapControllers();
 app.Run();
