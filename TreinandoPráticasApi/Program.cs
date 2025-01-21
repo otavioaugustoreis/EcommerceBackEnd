@@ -51,7 +51,7 @@ string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConne
 
 builder.Services.AddConectionBD(mySqlConnection);
 builder.Services.AddIdentityConfiguration(loggers);
-
+builder.Services.AddRateLimiting();
 
 var app = builder.Build();
 
@@ -97,7 +97,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseRouting();
-//Mapeamento dos controladores
+//Adicionando rate limiting
+app.UseRateLimiter();
 
 
 

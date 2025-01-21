@@ -3357,3 +3357,88 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 [16/01/2025 22:28:24] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
 [16/01/2025 22:28:24] Information: 0 - Requisição: GET /Account/Login, Headers: [Accept, */*], [Host, localhost:7013], [User-Agent, Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0], [Accept-Encoding, gzip, deflate, br, zstd], [Accept-Language, pt-BR,pt;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6], [Authorization, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFydHVyIiwiZW1haWwiOiJhcnR1ckBnbWFpbC5jb20iLCJqdGkiOiJiNmVjNTI0Zi0yZWU5LTQ5ZjItOTIyOS0zNTVhYzJhMDE4MzQiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MzcwNzcyMDYsImV4cCI6MTczNzA3NzM4NiwiaWF0IjoxNzM3MDc3MjA2LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjUwNjYiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjcwNjYifQ.nLj16KPJ-8tfjii1cqDkUY5kbUVJMlriqIs08tx_Kqs], [Referer, https://localhost:7013/swagger/index.html], [sec-ch-ua-platform, "Windows"], [sec-ch-ua, "Microsoft Edge";v="131", "Chromium";v="131", "Not_A Brand";v="24"], [sec-ch-ua-mobile, ?0], [sec-fetch-site, same-origin], [sec-fetch-mode, cors], [sec-fetch-dest, empty], [priority, u=1, i]
 [16/01/2025 22:28:24] Information: 0 - Resposta: 404
+[20/01/2025 21:53:56] Information: 0 - Incluindo autorização e autenticação do token
+[20/01/2025 21:53:56] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[20/01/2025 21:53:56] Information: 0 - Serviço SeedingServiceData registrado.
+[20/01/2025 21:53:56] Information: 0 - Serviço IProduto registrado.
+[20/01/2025 21:53:56] Information: 0 - Serviço IUsuario registrado.
+[20/01/2025 21:53:56] Information: 0 - Serviço genérico IRepository<> registrado.
+[20/01/2025 21:53:56] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[20/01/2025 21:53:56] Information: 0 - Serviço IUnitOfWork registrado.
+[20/01/2025 21:53:56] Information: 0 - Serviço IUnitOfWork registrado.
+[20/01/2025 21:53:56] Information: 0 - Registrando dependências Singletons
+[20/01/2025 21:53:56] Information: 0 - Adicionando configurações do Identity
+[20/01/2025 21:53:59] Information: 20101 - Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[20/01/2025 21:53:59] Information: 0 - Aplicação iniciada em modo Development.
+[20/01/2025 21:53:59] Warning: 16 - The WebRootPath was not found: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi\wwwroot. Static files may be unavailable.
+[20/01/2025 21:53:59] Information: 14 - Now listening on: https://localhost:7013
+[20/01/2025 21:53:59] Information: 14 - Now listening on: http://localhost:5051
+[20/01/2025 21:53:59] Information: 0 - Application started. Press Ctrl+C to shut down.
+[20/01/2025 21:54:00] Information: 0 - Hosting environment: Development
+[20/01/2025 21:54:00] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[20/01/2025 21:54:00] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 21:54:00] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 21:54:00] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 21:54:00] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 21:54:00] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 21:54:00] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 21:54:00] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 21:54:01] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:54] Information: 0 - Incluindo autorização e autenticação do token
+[20/01/2025 22:05:54] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[20/01/2025 22:05:54] Information: 0 - Serviço SeedingServiceData registrado.
+[20/01/2025 22:05:54] Information: 0 - Serviço IProduto registrado.
+[20/01/2025 22:05:54] Information: 0 - Serviço IUsuario registrado.
+[20/01/2025 22:05:54] Information: 0 - Serviço genérico IRepository<> registrado.
+[20/01/2025 22:05:54] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[20/01/2025 22:05:54] Information: 0 - Serviço IUnitOfWork registrado.
+[20/01/2025 22:05:54] Information: 0 - Serviço IUnitOfWork registrado.
+[20/01/2025 22:05:54] Information: 0 - Registrando dependências Singletons
+[20/01/2025 22:05:54] Information: 0 - Adicionando configurações do Identity
+[20/01/2025 22:05:56] Information: 20101 - Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[20/01/2025 22:05:56] Information: 0 - Aplicação iniciada em modo Development.
+[20/01/2025 22:05:57] Warning: 16 - The WebRootPath was not found: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi\wwwroot. Static files may be unavailable.
+[20/01/2025 22:05:57] Information: 14 - Now listening on: https://localhost:7013
+[20/01/2025 22:05:57] Information: 14 - Now listening on: http://localhost:5051
+[20/01/2025 22:05:57] Information: 0 - Application started. Press Ctrl+C to shut down.
+[20/01/2025 22:05:57] Information: 0 - Hosting environment: Development
+[20/01/2025 22:05:57] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[20/01/2025 22:05:58] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:58] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:58] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:58] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:58] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:58] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:58] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:05:59] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:12:17] Information: 0 - Incluindo autorização e autenticação do token
+[20/01/2025 22:12:17] Information: 0 - Registrando dependências com AddDIPScoppedClasse.
+[20/01/2025 22:12:17] Information: 0 - Serviço SeedingServiceData registrado.
+[20/01/2025 22:12:17] Information: 0 - Serviço IProduto registrado.
+[20/01/2025 22:12:17] Information: 0 - Serviço IUsuario registrado.
+[20/01/2025 22:12:17] Information: 0 - Serviço genérico IRepository<> registrado.
+[20/01/2025 22:12:17] Information: 0 - Filtro de API registrado: ApiLoggingFilter
+[20/01/2025 22:12:17] Information: 0 - Serviço IUnitOfWork registrado.
+[20/01/2025 22:12:17] Information: 0 - Serviço IUnitOfWork registrado.
+[20/01/2025 22:12:17] Information: 0 - Registrando dependências Singletons
+[20/01/2025 22:12:17] Information: 0 - Adicionando configurações do Identity
+[20/01/2025 22:12:19] Information: 20101 - Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `TB_CATEGORIA` AS `t`)
+[20/01/2025 22:12:19] Information: 0 - Aplicação iniciada em modo Development.
+[20/01/2025 22:12:19] Warning: 16 - The WebRootPath was not found: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi\wwwroot. Static files may be unavailable.
+[20/01/2025 22:12:19] Information: 14 - Now listening on: https://localhost:7013
+[20/01/2025 22:12:19] Information: 14 - Now listening on: http://localhost:5051
+[20/01/2025 22:12:19] Information: 0 - Application started. Press Ctrl+C to shut down.
+[20/01/2025 22:12:19] Information: 0 - Hosting environment: Development
+[20/01/2025 22:12:19] Information: 0 - Content root path: C:\Project_ASPNET\EcommerceBackEnd\TreinandoPráticasApi
+[20/01/2025 22:12:20] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:12:20] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.
+[20/01/2025 22:12:20] Debug: 9 - AuthenticationScheme: Identity.Application was not authenticated.

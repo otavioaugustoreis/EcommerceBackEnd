@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.JsonPatch.Exceptions;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Newtonsoft.Json;
 using System.Security.Cryptography.Xml;
 using TreinandoPráticasApi._1___Application.Models;
@@ -16,8 +18,16 @@ using TreinandoPráticasApi.RepositoriesPattern;
 
 namespace TreinandoPráticasApi.Controllers
 {
+
+    //Ativando CORS com o nome de uma politica e vai valer para todos os métodos
+    //[EnableCors("Nome da politica")]
     [Route("[controller]")]
     [ApiController]
+    [Produces("application/json")]
+    //O api convention method analisa os retornoe adiciona todos os ProducesResponseType possíveis e será aplicada a todos os métodos actions
+    [ApiConventionType(typeof(DefaultApiConventions)]
+    //Adicionando RateLimiting
+    //[EnableRateLimiting("Nome do rate")]
     public class CategoriaController : ControllerBase
     {
 
@@ -74,7 +84,12 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaDto);
         }
 
-            [Authorize]
+
+        /// <summary>
+        /// Obtem uma lista de categorias pelo
+        /// </summary>
+        /// <returns> Uma lista de objetos categoria</returns>
+        /// <remarks>Retorna o status 200</remarks>
             [HttpGet]
         public ActionResult<IEnumerable<CategoriaModelResponse>> Get()
         {
@@ -103,6 +118,13 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaDto);
         }
 
+
+        /// <summary>
+        /// Obtem uma lista de categorias pelo ID
+        /// </summary>
+        /// <returns> Uma  categoria</returns>
+        /// <param name="id"> Código do swagger</param>
+        /// <remarks>Retorna o status 200</remarks>
         //Esse GetId é FromQuery, ou seja, você escreve via URL e não no HTTP
         //QueryString
         [HttpGet("categoria/", Name = "GetCategoriaById")]
@@ -117,7 +139,31 @@ namespace TreinandoPráticasApi.Controllers
             return Ok(categoriaModel);
         }
 
+
+
+
+        /// <summary>
+        /// Inclui uma nova categoria
+        /// </summary>
+        /// <remarks>Exemplo de request:
+        /// 
+        /// POST: /categorias
+        /// {
+        ///     "categoriaID" : 1,
+        ///     "nome" : "categoria1",
+        ///     "imagemUrl" : "http://teste.net/1.jpg"
+        /// }     
+        /// </remarks>
+        /// <param name="entidade"> Objeto categoria</param>
+        /// <returns> O objeto da categoria incluia</returns>
+        /// <remarks>Retorna um objeto Categoria incluído</remarks>
+        //Esse GetId é FromQuery, ou seja, você escreve via URL e não no HTTP
+        //QueryString
         [HttpPost]
+       
+        //Definindo códigos de status de retorno possíveis
+        //[ProducesResponseType(StatusCodes.Status201Created)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
         public ActionResult<CategoriaModelResponse> Post([FromBody] CategoriaModelResponse entidade)
         {
             if (entidade is { DsNome: null }) return BadRequest();
